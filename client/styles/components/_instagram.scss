@@ -1,0 +1,61 @@
+@import "../abstracts/variables";
+
+.instagram {
+  margin-bottom: 10rem;
+
+  @media screen and (max-width: $breakpoint-medium) {
+    padding: 0 1rem;
+  }
+
+  &__inner {
+    position: relative;
+    background: $color-black;
+  }
+
+  &__inner:hover &__item {
+    opacity: 0.5;
+  }
+
+  &__inner:hover &__btn {
+    opacity: 1;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    
+    @media screen and (max-width: $breakpoint-medium) {
+      grid-template-columns: repeat(5, 1fr);
+      align-content: center;
+    }
+
+    @media screen and (max-width: $breakpoint-small) {
+      grid-template-columns: repeat(3, 1fr);
+      align-content: center;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    transition: opacity 0.2s;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  &__btn {
+    display: flex;
+    place-items: center;
+    gap: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+}
+

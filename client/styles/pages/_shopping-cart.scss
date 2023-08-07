@@ -1,0 +1,326 @@
+@import "../abstracts/variables";
+
+// Shopping cart empty
+.shopping-cart-empty {
+  &__main {
+    background-color: $color-black-2;
+    padding: 10rem 1rem 2rem 1rem;
+  }
+
+  &__main-inner {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__heading {
+    color: $color-light-red;
+    text-align: center;
+    font-family: $font-main;
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    max-width: 63rem;
+    width: 100%;
+  }
+
+  &__text {
+    color: $color-white;
+    text-align: center;
+    font-family: $font-secondary;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    max-width: 62.8rem;
+    width: 100%;
+  }
+
+  &__actions {
+    background-color: $color-white-2;
+  }
+
+  &__actions-inner {
+    padding: 2rem 1rem 10rem 1rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__go-to-shop-btn {
+  }
+}
+
+// Shopping cart full
+.shopping-cart-full {
+  background-color: $color-white;
+  padding: 10rem 1rem;
+
+  &__inner {
+  }
+
+  &__heading {
+    color: $color-black;
+    font-family: $font-main;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  &__content {
+    margin-top: 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 9.4rem;
+
+    @media only screen and (max-width: $breakpoint-large) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__content-left {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  &__shoe-item {
+    display: flex;
+    gap: 9.1rem;
+    align-items: center;
+
+    @media only screen and (max-width: $breakpoint-small) {
+      gap: 2rem;
+    }
+  }
+
+  &__shoe-item-left {
+    display: flex;
+    gap: 2.6rem;
+    align-items: center;
+
+    @media only screen and (max-width: $breakpoint-smallest) {
+      gap: 1rem;
+    }
+  }
+
+  &__remove-icon {
+    cursor: pointer;
+    width: 1.8rem;
+    height: 1.8rem;
+    flex-shrink: 0;
+  }
+
+  &__picture {
+    flex: 1 0 11.6rem;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__shoe-name {
+    color: $color-black;
+    font-family: $font-main;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    max-width: 17.9rem;
+    width: 100%;
+
+    @media only screen and (max-width: $breakpoint-smallest) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__shoe-item-actions-middle {
+    display: flex;
+    align-items: center;
+    border: 1px solid $color-light-red;
+    border-radius: 3px;
+  }
+
+  &__remove {
+
+  }
+
+  &__add {
+
+  }
+
+  &__remove, &__add {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 1.6rem;
+  }
+
+  &__count {
+    color: $color-black;
+    text-align: center;
+    font-family: $font-secondary;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  &__shoe-item-right {
+  }
+
+  &__shoe-item-price {
+    color: $color-light-grey;
+    text-align: center;
+    font-family: $font-main;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  &__content-right {
+    width: 100%;
+    max-width: 37rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__content-right-main {
+    background: $color-black-2;
+    color: $color-white;
+    padding: 3rem;
+  }
+
+  &__content-right-heading {
+    color: $color-white;
+    font-family: $font-main;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    padding-bottom: .8rem;
+  }
+
+  &__content-right--border-bottom {
+    border-bottom: 1px solid $color-light-grey;
+    margin-bottom: 8px;
+  }
+
+  &__content-right-flex {
+    padding-bottom: .8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__content-right-text-heading {
+    color: $color-light-grey;
+    font-family: $font-secondary;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    &--1, &--2 {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__content-right-price {
+    color: $color-white;
+    font-family: $font-main;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  .shopping-cart-full__content-right-actions {
+    display: flex;
+    gap: 3rem;
+  }
+
+  .shopping-cart-full__proceed-to-checkout-btn {
+    padding: 1rem;
+  }
+
+  .shopping-cart-full__continue-shopping-btn {
+    padding: 1rem;
+  }
+}
+
+// Discount
+.discount {
+  padding: 0 1rem 10rem 1rem;
+
+  &__inner {
+  }
+
+  &__heading {
+    color: $color-black;
+    font-family: $font-main;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  &__text {
+    width: 100%;
+    max-width: 40rem;
+    color: $color-black;
+    font-family: $font-secondary;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 3rem;
+  }
+
+  &__form {
+    display: flex;
+    gap: 3rem;
+
+    @media only screen and (max-width: $breakpoint-small) {
+      flex-direction: column;
+    }
+  }
+
+  &__form-input {
+    padding: 1rem 3rem;
+    outline: none;
+    border-radius: 6px;
+    border: 1px solid $color-light-red;
+
+    &::placeholder {
+      color: $color-light-grey;
+      font-family: $font-secondary;
+      font-size: 1.4rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+
+  &__submit-btn {
+  }
+
+}
+
+
+
+

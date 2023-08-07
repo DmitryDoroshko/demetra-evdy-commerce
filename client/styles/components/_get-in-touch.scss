@@ -1,0 +1,73 @@
+@import "../abstracts/variables";
+
+.get-in-touch {
+  background: $color-white-2;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    padding: 5rem 1rem 10rem 1rem;
+
+    @media only screen and (max-width: $breakpoint-small) {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+  }
+
+  &__left {
+    flex: 1 0 50%;
+    max-width: 50rem;
+  }
+
+  &__title {
+    color: $color-light-red;
+    font-family: $font-main;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 1.9rem;
+  }
+
+  &__text {
+    color: $color-black;
+    font-family: $font-secondary;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__right {
+    flex: 1 0 50%;
+    padding: 0 1rem;
+
+    @media only screen and (max-width: $breakpoint-small) {
+      width: 100%;
+    }
+  }
+
+  &__questions-form {
+    padding-bottom: 0;
+  }
+
+  &__questions-form-input {
+    max-width: 100%;
+    padding-left: 3rem;
+  }
+
+  &__questions-textarea {
+    max-width: 77rem;
+  }
+
+  &__question-form-actions {
+    align-self: flex-start;
+  }
+
+  &__questions-form-btn {
+    align-self: flex-start;
+  }
+}
+

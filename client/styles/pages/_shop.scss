@@ -1,0 +1,148 @@
+@import "../abstracts/variables";
+
+.shop {
+  margin-top: 4.1rem;
+
+  &__actions {
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4.1rem;
+
+    @media only screen and (max-width: $breakpoint-smallest) {
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+    }
+
+  }
+
+  &__actions-left {
+    display: flex;
+    align-items: center;
+    gap: 2.7rem;
+  }
+
+  &__sort-by-dropdown {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+  }
+
+  &__sort-by-head {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  &__sort-by-icon {
+  }
+
+  &__sort-by-text {
+    color: $color-black;
+    font-family: $font-secondary;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__sort-by-arrow-down {
+  }
+
+  &__showing-items {
+    color: $color-black;
+    font-family: $font-secondary;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__sort-by-dropdown:hover  &__sort-by-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0 3px 5px -1px #ccc;
+  }
+
+  &__sort-by-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    z-index: 100;
+  }
+
+  &__sort-by-item {
+    width: 10rem;
+    cursor: pointer;
+    color: $color-black;
+    border: none;
+    outline: none;
+    padding: 1rem 3rem;
+
+    &:hover {
+      color: $color-light-red;
+    }
+  }
+
+  &__actions-right {
+  }
+
+  &__storing-dropdown {
+    width: 19rem;
+    position: relative;
+  }
+
+  &__storing-head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.1rem 2rem;
+    gap: 3.7rem;
+    border: 1px solid $color-light-red;
+    border-radius: 6px;
+    width: 100%;
+    color: $color-black;
+    font-family: $font-secondary;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__storing-dropdown:hover &__storing-content-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0 3px 5px -1px #ccc;
+  }
+
+  &__storing-name {
+  }
+
+  &__storing-arrow {
+  }
+
+  &__storing-content-items {
+    position: absolute;
+    display: none;
+    width: 100%;
+  }
+
+  &__storing-content-item {
+    width: 100%;
+    cursor: pointer;
+    color: $color-black;
+    border: none;
+    outline: none;
+    padding: 1rem 3rem;
+
+    &:hover {
+      color: $color-light-red;
+    }
+  }
+
+}

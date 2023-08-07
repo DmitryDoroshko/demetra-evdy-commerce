@@ -1,0 +1,73 @@
+@import "../abstracts/variables";
+
+.cards-white {
+  margin-bottom: 5rem;
+
+  &__inner {
+    display: flex;
+    @media only screen and (max-width: $breakpoint-medium) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__card {
+    padding: 5rem 3rem;
+    display: flex;
+    flex-direction: column;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      align-items: center;
+      margin: 0 auto;
+    }
+
+    &:not(:last-child) {
+      border-right: 1px solid $color-light-grey;
+
+      @media only screen and (max-width: $breakpoint-medium) {
+        border-right: none;
+      }
+    }
+  }
+
+  &__icon {
+    margin-bottom: 3rem;
+    width: 100%;
+    max-width: 6.7rem;
+  }
+
+  &__content {
+    margin-top: auto;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__heading {
+    color: $color-light-red;
+    font-family: $font-main;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+
+  &__text {
+    color: $color-black;
+    font-family: $font-secondary;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      width: 100%;
+      max-width: 30rem;
+    }
+  }
+}

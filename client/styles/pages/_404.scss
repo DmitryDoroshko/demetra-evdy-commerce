@@ -1,0 +1,99 @@
+@import "../abstracts/variables";
+
+.not-found-main {
+  background: $color-white-2;
+  min-height: 50.1rem;
+  padding: 10rem 1rem 10rem 1rem;
+  display: grid;
+  place-content: center;
+
+  &__inner {
+  }
+
+  &__sup-title {
+    text-align: center;
+  }
+
+  &__sub-title {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &__sup-title, &__sub-title {
+    color: $color-light-red;
+    font-family: $font-main;
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    color: $color-light-grey;
+    text-align: center;
+    font-family: $font-secondary;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    max-width: 51.2rem;
+    width: 100%;
+    margin-bottom: 2.5rem;
+  }
+
+  &__input-wrapper {
+    position: relative;
+    max-width: 57rem;
+    width: 100%;
+    height: 4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__input {
+    border-radius: 6px;
+    border: 1px solid $color-light-red;
+    background: $color-white;
+    width: 100%;
+    padding: 1.1rem 1.1rem 1.1rem 3rem;
+
+    &::placeholder {
+      color: $color-light-grey;
+      font-family: $font-secondary;
+      font-size: 1.2rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 1.4rem;
+    right: 3rem;
+  }
+
+  &__redirects {
+    text-align: center;
+    color: $color-light-grey;
+    font-family: $font-secondary;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__text-secondary {
+
+  }
+
+  &__redirect-link {
+    color: $color-light-red;
+  }
+
+}
+

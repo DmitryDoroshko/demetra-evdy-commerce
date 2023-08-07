@@ -1,0 +1,131 @@
+@import "../abstracts/variables";
+
+.latest-news {
+  margin-bottom: 10rem;
+
+  @media only screen and (max-width: $breakpoint-largest) {
+    padding: 0 1rem;
+  }
+
+  @media only screen and (max-width: $breakpoint-medium) {
+    text-align: center;
+  }
+
+  &__inner {
+
+  }
+
+  &__top-text {
+    text-align: left;
+    @media only screen and (max-width: $breakpoint-medium) {
+      text-align: center;
+    }
+  }
+
+  &__heading {
+    color: $color-black;
+    text-align: inherit;
+    font-size: 3rem;
+    font-family: $font-main;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    color: $color-dark-grey;
+    font-size: 1.5rem;
+    font-family: $font-secondary;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 100%;
+    max-width: 57rem;
+    margin-bottom: 3rem;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      margin: 0 auto 3rem auto;
+    }
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__items {
+    display: flex;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    max-width: 33.33333%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 4rem;
+    padding-bottom: 2.3rem;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      max-width: 75%;
+    }
+  }
+
+  &__picture {
+    width: 100%;
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__item-inner {
+    display: grid;
+    place-items: center;
+  }
+
+  &__date {
+    color: $color-light-grey;
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: $font-secondary;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 1.5rem;
+  }
+
+  &__title {
+    color: $color-light-red;
+    text-align: center;
+    font-size: 1.4rem;
+    font-family: $font-main;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  &__btn {
+  }
+
+  &__slider {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  &__slider-btn {
+  }
+}
+
+

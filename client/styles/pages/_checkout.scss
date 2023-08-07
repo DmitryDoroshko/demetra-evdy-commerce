@@ -1,0 +1,236 @@
+@import "../abstracts/variables";
+
+// Checkout empty
+.checkout-empty {
+  &__main {
+    background-color: $color-black-2;
+    padding: 10rem 1rem 2rem 1rem;
+  }
+
+  &__main-inner {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__heading {
+    color: $color-light-red;
+    text-align: center;
+    font-family: $font-main;
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    max-width: 63rem;
+    width: 100%;
+  }
+
+  &__text {
+    color: $color-white;
+    text-align: center;
+    font-family: $font-secondary;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    max-width: 62.8rem;
+    width: 100%;
+  }
+
+  &__actions {
+    background-color: $color-white-2;
+  }
+
+  &__actions-inner {
+    padding: 2rem 1rem 10rem 1rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__go-to-shop-btn {
+  }
+}
+
+// Checkout full
+.checkout {
+  padding: 10rem 1rem;
+
+  &__inner {
+  }
+
+  &__heading-main {
+    color: $color-black;
+    font-family: $font-main;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 2.7rem;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    @media only screen and (max-width: $breakpoint-larger) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__left {
+    flex: 0 1 63rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(30rem, 1fr));
+    gap: 3rem;
+
+    @media only screen and (max-width: $breakpoint-small) {
+      grid-template-columns: 35rem;
+      margin-bottom: 3rem;
+    }
+
+  }
+
+  &__action {
+
+    &--name {
+    }
+
+    &--surname {
+    }
+
+    &--company-name {
+    }
+
+    &--country {
+    }
+
+    &--city {
+      grid-column: 1 / -1;
+    }
+
+    &--address {
+      grid-column: 1 / -1;
+    }
+
+    &--phone-number {
+      grid-column: 1 / -1;
+    }
+
+    &--email {
+      grid-column: 1 / -1;
+    }
+
+    &--zip {
+      grid-column: 1 / 2;
+    }
+  }
+
+  &__label {
+    display: block;
+    color: $color-light-grey;
+    font-family: $font-secondary;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__input {
+    border-radius: 6px;
+    border: 1px solid $color-light-red;
+    padding: 0.5rem 2rem;
+    width: 100%;
+  }
+
+  &__right {
+    max-width: 37rem;
+    flex: 0 0 37rem;
+  }
+
+  &__totals {
+    width: 100%;
+    margin-bottom: 2.5rem;
+  }
+
+  &__payment {
+    background: $color-black-2;
+    color: $color-white;
+    padding: 3rem;
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__radio-wrapper {
+    position: relative;
+    padding-left: 1rem;
+    margin-bottom: 9px;
+  }
+
+  &__radio-input {
+    display: none;
+  }
+
+  &__radio-label {
+    color: $color-white;
+    font-family: $font-main;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  &__radio-button {
+    height: 1rem;
+    width: 1rem;
+    border: 2px solid $color-white;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: -1.5rem;
+    top: 0.4rem;
+
+    &::after {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      content: "";
+      display: block;
+      height: .6rem;
+      width: .6rem;
+      border-radius: 50%;
+      background-color: $color-white;
+      opacity: 0;
+      transition: all .3s;
+    }
+  }
+
+  &__radio-input:checked ~ &__radio-label &__radio-button::after {
+    opacity: 1;
+  }
+
+  &__text {
+    color: $color-white;
+    font-family: $font-secondary;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-left: 1rem;
+    margin-bottom: 9px;
+  }
+
+  &__payment-actions {
+  }
+
+  &__place-order-btn {
+  }
+}
+
+

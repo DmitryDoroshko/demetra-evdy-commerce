@@ -1,0 +1,66 @@
+@import "../abstracts/variables";
+
+// Buttons
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  padding: 1rem 4.5rem;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: $font-secondary;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  border: none;
+  outline: none;
+
+  &--grey {
+    background-color: $color-light-grey;
+    color: $color-white;
+  }
+
+  &--grey-transparent {
+    width: 7rem;
+    height: 7rem;
+    background: transparent;
+  }
+
+  &--transparent-red {
+    border: 1px solid $color-light-red;
+    background: transparent;
+  }
+
+  &--slider {
+    width: 1.2rem;
+    height: 1.2rem;
+    border: none;
+    outline: none;
+    background-color: $color-white-2;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &.active {
+      background-color: $color-light-red;
+    }
+  }
+
+  &--white {
+    border: none;
+    color: $color-black;
+    background-color: $color-white;
+  }
+
+  &--padding-0 {
+    padding: 0;
+  }
+
+  &--black {
+    background-color: $color-black;
+    color: $color-white;
+  }
+
+  &--red {
+    background: $color-light-red;
+    color: $color-white;
+  }
+}
