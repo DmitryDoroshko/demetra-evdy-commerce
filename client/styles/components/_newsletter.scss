@@ -1,0 +1,100 @@
+@import "../abstracts/variables";
+
+.newsletter {
+  background: $color-black-2;
+  padding: 6rem 1rem;
+
+  @media screen and (max-width: $breakpoint-small) {
+    padding: 2rem 1rem;
+  }
+
+  @media screen and (max-width: $breakpoint-smallest) {
+    padding: 1rem .5rem;
+  }
+
+  &__inner {
+    padding: 0 4.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7rem;
+    
+    @media screen and (max-width: $breakpoint-medium) {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+
+  &__left {
+    flex: 0 1 25rem;
+    @media screen and (max-width: $breakpoint-medium) {
+      flex: 10rem;
+    }
+  }
+
+  &__heading {
+    color: $color-white;
+    font-size: 3rem;
+    font-family: $font-main;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    color: $color-white;
+    font-size: 1.2rem;
+    font-family: $font-secondary;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__text-highlighted {
+    color: $color-light-red;
+  }
+
+  &__right {
+    display: flex;
+    width: 100%;
+  }
+
+  &__form {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  &__input {
+    width: 100%;
+    max-width: 56.5rem;
+    padding: 1.2rem 1rem 1.1rem 1rem;
+    border: 1px solid $color-light-red;
+    background: transparent;
+    border-radius: 5px;
+    color: $color-white;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: $color-white;
+      text-align: left;
+      font-size: 1.2rem;
+      font-family: $font-secondary;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+
+  &__btn {
+    align-self: center;
+    width: 100%;
+    max-width: max-content;
+  }
+
+}

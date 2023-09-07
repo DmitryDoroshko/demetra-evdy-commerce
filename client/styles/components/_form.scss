@@ -1,0 +1,128 @@
+@import "../abstracts/variables";
+
+.form {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+
+  @media only screen and (max-width: $breakpoint-medium) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__input {
+    padding: 1.2rem 1rem 1.1rem 1rem;
+    border: 1px solid $color-light-red;
+    background: transparent;
+    border-radius: 5px;
+    color: $color-white;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: $color-white;
+      text-align: left;
+      font-size: 1.2rem;
+      font-family: $font-secondary;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+
+  &__submit-btn {
+    display: inline-block;
+    cursor: pointer;
+    padding: 1rem 4.5rem;
+    border-radius: 6px;
+    font-size: 1.4rem;
+    font-family: $font-secondary;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    border: none;
+    outline: none;
+    background: $color-light-red;
+    color: $color-white;
+  }
+}
+
+.questions-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 10rem;
+
+  @media only screen and (max-width: $breakpoint-medium) {
+    padding: 1rem 1rem 10rem 1rem;
+  }
+
+  &__heading {
+    display: inline-block;
+    color: $color-light-red;
+    font-family: $font-main;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  &__input-white {
+    width: 100%;
+    max-width: 56.5rem;
+    padding: 1.2rem 1rem 1.1rem 1rem;
+    border: 1px solid $color-light-red;
+    background: $color-white;
+    color: $color-black;
+    border-radius: 5px;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: $color-light-grey;
+      font-size: 14px;
+      text-align: left;
+      font-family: $font-secondary;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+
+  &__textarea-white {
+    border-radius: 5px;
+    width: 100%;
+    max-width: 56.5rem;
+    height: 19rem;
+    resize: none;
+    padding: 1rem 3rem;
+    border: 1px solid $color-light-red;
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: $color-light-grey;
+      font-size: 14px;
+      text-align: left;
+      font-family: $font-secondary;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+
+  &__actions {
+    margin-top: 2rem;
+  }
+
+  &__btn {
+
+  }
+}

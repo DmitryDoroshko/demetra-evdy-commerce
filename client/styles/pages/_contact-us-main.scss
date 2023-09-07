@@ -1,0 +1,147 @@
+@import "../abstracts/variables";
+
+.contact-us {
+  position: relative;
+  min-height: 60.2rem;
+  height: max-content;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 44.2rem;
+    background-image: linear-gradient(
+                    -11deg,
+                    white 0%,
+                    white 50%,
+                    $color-black-2 50%);
+    z-index: 10;
+  }
+
+  &__inner {
+    padding-top: 10rem;
+    width: 100%;
+    position: relative;
+    z-index: 20;
+  }
+
+  &__map {
+    display: flex;
+    position: relative;
+    z-index: 100;
+
+    @media only screen and (max-width: $breakpoint-largest) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background: $color-black-2;
+    padding: 4rem 6.7rem 4rem 3rem;
+    color: $color-white;
+
+    @media only screen and (max-width: $breakpoint-largest) {
+      order: 2;
+      width: 100%;
+      max-width: 80rem;
+    }
+
+  }
+
+  &__location {
+    &--1 {
+      margin-bottom: 3rem;
+    }
+
+    &--2 {
+
+    }
+  }
+
+  &__heading {
+    text-align: center;
+    color: $color-white;
+    font-family: $font-main;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 2.3rem;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    &:not(:last-of-type) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__img {
+    width: 1.5rem;
+  }
+
+  &__info-text {
+    color: $color-white;
+    font-family: $font-secondary;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 4.1rem;
+  }
+
+  &__list-item {
+  }
+
+  &__link {
+  }
+
+  &__link-img {
+    width: 100%;
+    max-width: 11.3rem;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-height: 45.2rem;
+    height: 100%;
+    flex-shrink: 0;
+    overflow: hidden;
+
+    @media only screen and (max-width: $breakpoint-largest) {
+      order: 1;
+    }
+  }
+
+  &__map-img {
+    width: 100%;
+    max-width: 80rem;
+    height: 100%;
+    max-height: 45.2rem;
+    object-fit: cover;
+  }
+}
+
+
+

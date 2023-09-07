@@ -1,0 +1,136 @@
+@import "../abstracts/variables";
+
+.our-team {
+  height: 100%;
+  max-height: 77.6rem;
+  background-image: linear-gradient(
+                  -11deg,
+                  black 0%,
+                  black 50%,
+                  white 50%);
+  padding-bottom: 25.8rem;
+
+  @media only screen and (max-width: $breakpoint-large) {
+    max-height: fit-content;
+  }
+
+  @media only screen and (max-width: $breakpoint-medium) {
+    padding-bottom: 8rem;
+  }
+
+  &__inner {
+    @media only screen and (max-width: $breakpoint-large) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__texts {
+    @media only screen and (max-width: $breakpoint-large) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__heading {
+    color: $color-black;
+    font-family: $font-main;
+    font-size: 3.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    color: $color-light-grey;
+    font-family: $font-secondary;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 4rem;
+  }
+
+  &__cards {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    justify-content: center;
+
+    @media only screen and (max-width: $breakpoint-large) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 27rem;
+    background: $color-white-2;
+    border-radius: 1rem;
+    text-align: center;
+    padding: 3rem;
+
+    @media only screen and (max-width: $breakpoint-small) {
+      max-width: max-content;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 12.4rem;
+    margin-bottom: 2rem;
+  }
+
+  &__card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+
+  &__position {
+    color: $color-black;
+    text-align: center;
+    font-family: $font-secondary;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__name {
+    color: $color-black;
+    text-align: center;
+    font-family: $font-main;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: center;
+    gap: .7rem;
+  }
+
+  &__icon-img {
+    width: 100%;
+    max-width: 1.2rem;
+  }
+
+  &__actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__btn {
+  }
+}
+
