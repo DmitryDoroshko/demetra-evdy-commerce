@@ -55,6 +55,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    animation: fadeIn 0.5s linear forwards;
+
+    &.active {
+      animation: none;
+      opacity: 1;
+    }
 
     @media only screen and (max-width: $breakpoint-large) {
       flex-direction: column;
@@ -98,8 +104,12 @@
   }
 
   &__slider-picture {
-    max-width: 100%;
+    width: 100%;
+    max-width: 57rem;
     height: 61.7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     @media only screen and (max-width: $breakpoint-small) {
       height: 30rem;
@@ -125,5 +135,15 @@
   &__slider-control {
     height: 1.2rem;
     width: 1.2rem;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

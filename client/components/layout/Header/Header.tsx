@@ -1,4 +1,5 @@
 import {useState} from "react";
+import Link from "next/link";
 
 export function Header() {
   const [isHamburgerMenuOpen, setIsHamburgerMenuOpen] = useState<boolean>(false);
@@ -20,12 +21,12 @@ export function Header() {
                 <ul className="header__dropdown-list">
 
                   <li className="header__dropdown">
-                    <a href="#" className="header__link active">Home</a>
+                    <Link href={"/"} className="header__link active">Home</Link>
                     <span className="header__drop-icon"></span>
                   </li>
 
                   <li className="header__dropdown">
-                    <a href="#" className="header__link">Shop</a>
+                    <Link href="/shop" className="header__link">Shop</Link>
                     <span className="header__drop-icon"></span>
                   </li>
 

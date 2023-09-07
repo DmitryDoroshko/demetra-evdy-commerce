@@ -1,5 +1,6 @@
 import {Header} from "@/components/layout/Header/Header";
 import {Newsletter} from "@/components/shared/Newsletter/Newsletter";
+import { MainSlider } from "@/components/slider/MainSlider/MainSlider";
 
 export default function Home() {
   return (
@@ -8,39 +9,7 @@ export default function Home() {
         <div className="container">
 
           <div className="main__inner">
-
-            <div className="main__slider">
-              <button className="main__slider-btn main__slider-btn--left btn btn--grey-transparent"><img
-                  src="/assets/img/main/left.png" alt="Left arrow"/></button>
-              <div className="main__slider-content">
-
-                <div className="main__slider-texts">
-                  <h1 className="main__slider-heading">
-                    choose your shoes with us.
-                  </h1>
-                  <p className="main__slider-text">
-                    We will help you to choose the product that without the doubt suits you best. And we mean it
-                  </p>
-                  <button className="main__slider-btn-main btn btn--grey">
-                    Read More
-                  </button>
-                </div>
-
-                <div className="main__slider-picture">
-                  <img src="/assets/img/main/slider_1.png" alt="Shoes" className="main__slider-img"/>
-                </div>
-
-              </div>
-              <button className="main__slider-btn main__slider-btn--right btn btn--grey-transparent"><img
-                  src="/assets/img/main/right.png" alt="Right arrow"/></button>
-            </div>
-
-            <div className="main__slider-controls">
-              <button className="main__slider-control btn--slider active"></button>
-              <button className="main__slider-control btn--slider"></button>
-              <button className="main__slider-control btn--slider"></button>
-              <button className="main__slider-control btn--slider"></button>
-            </div>
+            <MainSlider />
           </div>
 
         </div>
