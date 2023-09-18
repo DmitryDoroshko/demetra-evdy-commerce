@@ -84,7 +84,7 @@ export function MainSlider() {
     setIsSliderItemActive(true);
   };
 
-  const goToSlide = (indexToGoTo) => {
+  const goToSlide = (indexToGoTo: number) => {
     setCurrentIndex(indexToGoTo);
     setCurrentSlideData(sliderContent[indexToGoTo]);
   };

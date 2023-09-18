@@ -117,14 +117,22 @@ export function Header() {
           <div className={`header__mobile-nav ${isHamburgerMenuOpen ? "active" : ""}`}>
             <nav className="header__dropdowns header__dropdowns--mobile">
               <ul className="header__dropdown-list header__dropdown-list--mobile">
-                <HeaderDropdown linkHref={"/"} title={"Home"} isDropdownActive={true}
-                                className={"header__dropdown header__dropdown--mobile mobile"} />
-                <HeaderDropdown linkHref={"/shop"} title={"Shop"} isDropdownActive={false}
-                                className={"header__dropdown header__dropdown--mobile mobile"} />
-                <HeaderDropdown linkHref={"/"} title={"Product"} isDropdownActive={false}
-                                className={"header__dropdown header__dropdown--mobile mobile"} />
-                <HeaderDropdown linkHref={"/"} title={"Blog"} isDropdownActive={false}
-                                className={"header__dropdown header__dropdown--mobile mobile"} />
+                <li className="header__dropdown header__dropdown--mobile active">
+                  <a href="/" className="header__link header__link--mobile active">Home</a>
+                  <span className="header__drop-icon header__drop-icon--mobile"></span>
+                </li>
+                <li className="header__dropdown header__dropdown--mobile">
+                  <a href="/shop" className="header__link header__link--mobile">Shop</a>
+                  <span className="header__drop-icon header__drop-icon--mobile"></span>
+                </li>
+                <li className="header__dropdown header__dropdown--mobile">
+                  <a href="/product" className="header__link header__link--mobile">Product</a>
+                  <span className="header__drop-icon header__drop-icon--mobile"></span>
+                </li>
+                <li className="header__dropdown header__dropdown--mobile">
+                  <a href="/blog" className="header__link header__link--mobile">Blog</a>
+                  <span className="header__drop-icon header__drop-icon--mobile"></span>
+                </li>
                 <li className="header__dropdown header__dropdown--mobile">
                   <a href="#" className="header__link header__link--mobile">Page</a>
                 </li>
@@ -184,7 +192,6 @@ export function Header() {
                             stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </g>
                   </svg>
-
                 </button>
               </li>
 
