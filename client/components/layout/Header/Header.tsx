@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { HeaderDropdown } from "@/components/layout/Header/HeaderDropdown";
+import Link from "next/link";
 
 export function Header() {
   const [isHamburgerMenuOpen, setIsHamburgerMenuOpen] = useState<boolean>(false);
@@ -21,8 +22,8 @@ export function Header() {
               <ul className="header__dropdown-list">
                 <HeaderDropdown linkHref={"/"} title={"Home"} isDropdownActive={true} />
                 <HeaderDropdown linkHref={"/shop"} title={"Shop"} isDropdownActive={false} />
-                <HeaderDropdown linkHref={"/"} title={"Product"} isDropdownActive={false} />
-                <HeaderDropdown linkHref={"/"} title={"Blog"} isDropdownActive={false} />
+                <HeaderDropdown linkHref={"/product"} title={"Product"} isDropdownActive={false} />
+                <HeaderDropdown linkHref={"/blog"} title={"Blog"} isDropdownActive={false} />
                 <li className="header__dropdown">
                   <a href="#" className="header__link">Page</a>
                 </li>
@@ -88,7 +89,7 @@ export function Header() {
               </li>
 
               <li className="header__action">
-                <button className="header__btn">
+                <Link href={"/shopping-cart"} className="header__btn">
                   <svg className="header__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
                        xmlns="http://www.w3.org/2000/svg">
                     <g id="shopping-cart">
@@ -104,7 +105,7 @@ export function Header() {
                     </g>
                   </svg>
 
-                </button>
+                </Link>
               </li>
             </ul>
           </div>
