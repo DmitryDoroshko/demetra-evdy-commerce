@@ -2,6 +2,8 @@ import { MainSecondary } from "@/components/shared/MainSecondary/MainSecondary";
 import products from "@/data/shop-items.json";
 import { Product } from "@/components/shared/Product/Product";
 
+const LIMIT_FOR_PRODUCTS_MAPPED = 4;
+
 export default function ProductPage() {
   return (
     <>
@@ -143,7 +145,7 @@ export default function ProductPage() {
             <main className="our-products__items">
 
               {
-                products.items.slice(0, 4).map(item => {
+                products.items.slice(0, LIMIT_FOR_PRODUCTS_MAPPED).map(item => {
                   return <Product key={item.id} image={item.image} imageAlternativeText={item.name} brand={item.brand}
                                   name={item.name} price={item.price} id={item.id} />;
                 })
