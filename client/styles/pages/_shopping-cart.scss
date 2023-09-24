@@ -247,17 +247,18 @@
     text-transform: uppercase;
   }
 
-  .shopping-cart-full__content-right-actions {
+  &__content-right-actions {
     display: flex;
     gap: 3rem;
   }
 
-  .shopping-cart-full__proceed-to-checkout-btn {
+  &__proceed-to-checkout-btn {
     padding: 1rem;
   }
 
-  .shopping-cart-full__continue-shopping-btn {
+  &__continue-shopping-btn, &__continute-shopping-btn:link {
     padding: 1rem;
+    color: $color-light-grey;
   }
 }
 
