@@ -84,9 +84,12 @@ export function MainSlider() {
     setIsSliderItemActive(true);
   };
 
-  const goToSlide = (indexToGoTo: number) => {
+  const goToSlide = async (indexToGoTo: number) => {
     setCurrentIndex(indexToGoTo);
     setCurrentSlideData(sliderContent[indexToGoTo]);
+    setIsSliderItemActive(false);
+    await sleep(TIME_TO_SLEEP_MILLISECONDS);
+    setIsSliderItemActive(true);
   };
 
   return (
