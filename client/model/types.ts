@@ -1,8 +1,14 @@
-export interface ICartItem {
+export interface IProduct {
   id: string;
   brand: string;
   name: string;
   price: number;
-  imageAltText: string;
   image: string;
+  imageAltText: string;
+}
+
+export interface ICartItem extends IProduct {
+  itemCount: number;
+  description: string;
+  amountOfMoneyForItems: number;
 }

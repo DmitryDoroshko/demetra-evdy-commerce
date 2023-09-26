@@ -1,9 +1,9 @@
 export function ShoeItem({
-                           price,
+                           amountOfMoneyForItems,
                            itemCount,
                            pictureSrc,
                            name,
-                         }: { price: number; itemCount: number; pictureSrc: string; name: string; }) {
+                         }: { amountOfMoneyForItems: number; itemCount: number; pictureSrc: string; name: string; }) {
   return (
     <div className="shopping-cart-full__shoe-item">
       <div className="shopping-cart-full__shoe-item-left">
@@ -44,7 +44,7 @@ export function ShoeItem({
       </div>
 
       <div className="shopping-cart-full__shoe-item-right">
-        <span className="shopping-cart-full__shoe-item-price">${price}</span>
+        <span className="shopping-cart-full__shoe-item-price">${amountOfMoneyForItems}</span>
       </div>
     </div>
   );

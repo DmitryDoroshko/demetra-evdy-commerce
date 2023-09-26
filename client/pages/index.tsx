@@ -1,11 +1,21 @@
+import { useEffect } from "react";
+
 import { Newsletter } from "@/components/shared/Newsletter/Newsletter";
 import { MainSlider } from "@/components/slider/MainSlider/MainSlider";
 import products from "@/data/shop-items.json";
 import { Product } from "@/components/shared/Product/Product";
+import { fetchAllProducts } from "@/store/products/products.thunks";
+import { useAppDispatch } from "@/hooks/redux-hooks";
 
 const LIMIT_FOR_PRODUCTS_MAPPED = 8;
 
 export default function Home() {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchAllProducts());
+  }, []);
+
   return (
     <>
       <section className="main">

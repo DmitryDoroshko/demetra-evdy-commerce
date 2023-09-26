@@ -3,8 +3,8 @@ import Link from "next/link";
 export function CartTotals({
                              totalPrice,
                              subtotalPrice,
-                             flatRate,
-                           }: { totalPrice: number; flatRate: number; subtotalPrice: number; }) {
+                             shippingFlatRate,
+                           }: { totalPrice: number; shippingFlatRate: number; subtotalPrice: number; }) {
 
   return (
     <>
@@ -28,7 +28,7 @@ export function CartTotals({
 
           <div className="shopping-cart-full__content-right-flex">
                     <span
-                      className="shopping-cart-full__content-right-text-heading shopping-cart-full__content-right-text-heading--2">Flat Rate: ${flatRate}</span>
+                      className="shopping-cart-full__content-right-text-heading shopping-cart-full__content-right-text-heading--2">Flat Rate: ${shippingFlatRate}</span>
           </div>
 
           <div

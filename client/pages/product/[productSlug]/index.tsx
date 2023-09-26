@@ -1,10 +1,46 @@
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 import { MainSecondary } from "@/components/shared/MainSecondary/MainSecondary";
 import products from "@/data/shop-items.json";
 import { Product } from "@/components/shared/Product/Product";
+import { useAppDispatch, useAppSelector } from "@/hooks/redux-hooks";
+import { addItemToCart } from "@/store/shopping-cart/shopping-cart.slice";
+import { fetchAllProducts, fetchSingleProductById } from "@/store/products/products.thunks";
+import { selectCurrentProduct, selectProductItems } from "@/store/products/products.selectors";
 
 const LIMIT_FOR_PRODUCTS_MAPPED = 4;
 
+// let initialLoad = true;
+
 export default function ProductPage() {
+  const router = useRouter();
+  const productSlug = router.query.productSlug;
+  const dispatch = useAppDispatch();
+  const { items: products } = useAppSelector(selectProductItems);
+  const currentProduct = useAppSelector(selectCurrentProduct);
+
+  useEffect(() => {
+    console.log("ProductPage fetchAllProducts");
+    dispatch(fetchAllProducts());
+  }, []);
+
+  useEffect(() => {
+/*    if (initialLoad) {
+      initialLoad = false;
+      dispatch(fetchSingleProductById(productSlug));
+    }*/
+
+    dispatch(fetchSingleProductById(productSlug));
+  }, [productSlug]);
+
+  const addProductToCartHandler = () => {
+    if (currentProduct == null) {
+      return;
+    }
+
+    dispatch(addItemToCart({ item: currentProduct, count: 1 }));
+  };
+
   return (
     <>
       <MainSecondary image={"/assets/img/main-secondary/product.png"}
@@ -64,7 +100,9 @@ export default function ProductPage() {
                 consequat, tortor enim, in consectetur amet, felis fames. Fringilla quis at sed tristique.are sed.</p>
 
               <div className="product__actions">
-                <button className="btn btn--grey product__add-to-cart-btn">Add to cart</button>
+                <button className="btn btn--grey product__add-to-cart-btn" onClick={addProductToCartHandler}>Add to
+                  cart
+                </button>
                 <button className="btn btn--transparent-red product__add-to-wishlist-btn">Add to wishlist</button>
               </div>
 
@@ -144,11 +182,10 @@ export default function ProductPage() {
 
             <main className="our-products__items">
 
-              {
-                products.items.slice(0, LIMIT_FOR_PRODUCTS_MAPPED).map(item => {
-                  return <Product key={item.id} image={item.image} imageAlternativeText={item.name} brand={item.brand}
-                                  name={item.name} price={item.price} id={item.id} />;
-                })
+              {products?.slice(0, LIMIT_FOR_PRODUCTS_MAPPED).map(item => {
+                return <Product key={item.id} image={item.image} imageAlternativeText={item.name} brand={item.brand}
+                                name={item.name} price={item.price} id={item.id} />;
+              })
               }
             </main>
 
