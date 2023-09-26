@@ -31,6 +31,7 @@ export function ShoppingCartFull({
               <div className="shopping-cart-full__content-left">
                 {shoppingCartItems.map(item => {
                   return <ShoeItem key={item.id}
+                                   id={item.id}
                                    amountOfMoneyForItems={item.amountOfMoneyForItems}
                                    itemCount={item.itemCount!}
                                    pictureSrc={item.image}

@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { MainSecondary } from "@/components/shared/MainSecondary/MainSecondary";
-import products from "@/data/shop-items.json";
 import { Product } from "@/components/shared/Product/Product";
 import { useAppDispatch, useAppSelector } from "@/hooks/redux-hooks";
 import { addItemToCart } from "@/store/shopping-cart/shopping-cart.slice";
@@ -9,8 +8,6 @@ import { fetchAllProducts, fetchSingleProductById } from "@/store/products/produ
 import { selectCurrentProduct, selectProductItems } from "@/store/products/products.selectors";
 
 const LIMIT_FOR_PRODUCTS_MAPPED = 4;
-
-// let initialLoad = true;
 
 export default function ProductPage() {
   const router = useRouter();
@@ -20,16 +17,10 @@ export default function ProductPage() {
   const currentProduct = useAppSelector(selectCurrentProduct);
 
   useEffect(() => {
-    console.log("ProductPage fetchAllProducts");
     dispatch(fetchAllProducts());
   }, []);
 
   useEffect(() => {
-/*    if (initialLoad) {
-      initialLoad = false;
-      dispatch(fetchSingleProductById(productSlug));
-    }*/
-
     dispatch(fetchSingleProductById(productSlug));
   }, [productSlug]);
 

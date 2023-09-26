@@ -1,13 +1,24 @@
+import { useAppDispatch } from "@/hooks/redux-hooks";
+import { removeItemFromCartByItsIdCompletely } from "@/store/shopping-cart/shopping-cart.slice";
+
 export function ShoeItem({
+                           id,
                            amountOfMoneyForItems,
                            itemCount,
                            pictureSrc,
                            name,
-                         }: { amountOfMoneyForItems: number; itemCount: number; pictureSrc: string; name: string; }) {
+                         }: { id: string; amountOfMoneyForItems: number; itemCount: number; pictureSrc: string; name: string; }) {
+  const dispatch = useAppDispatch();
+
+  const removeItemFromCartHandler = () => {
+    dispatch(removeItemFromCartByItsIdCompletely({ id }));
+  };
+
   return (
     <div className="shopping-cart-full__shoe-item">
       <div className="shopping-cart-full__shoe-item-left">
-        <svg className="shopping-cart-full__remove-icon" width="18" height="18" viewBox="0 0 18 18"
+        <svg onClick={removeItemFromCartHandler} className="shopping-cart-full__remove-icon" width="18" height="18"
+             viewBox="0 0 18 18"
              fill="none"
              xmlns="http://www.w3.org/2000/svg">
           <g clipPath="url(#clip0_20_1896)">

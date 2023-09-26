@@ -29,17 +29,12 @@ const shoppingCartSlice = createSlice({
       const { item, count } = payload;
 
       if (count <= 0) {
-        console.log("addItemToCart => count is invalid");
         return;
       }
 
       if (!item) {
-        console.log("addItemToCart => item is null");
         return;
       }
-
-      const stateCartItems = JSON.parse(JSON.stringify(state.cartItems));
-      console.log({ stateCartItems });
 
       // if item already exists in cart
       const itemAlreadyExistingInShoppingCart: undefined | ICartItem = state.cartItems.find(itemInCart => itemInCart.id === item.id);
@@ -88,11 +83,23 @@ const shoppingCartSlice = createSlice({
     },
     removeItemFromCartByItsIdCompletely(state, { payload }: PayloadAction<string>) {
       const { id } = payload;
-      // TODO: Make removeItemFromCartByItsIdCompletely work
+      const itemToDelete = state.cartItems.find(item => item.id === id);
+
+      if (!itemToDelete) {
+        return;
+      }
+
+      state.totalPriceForAllItems = state.totalPriceForAllItems - (itemToDelete.itemCount * itemToDelete.price);
+      state.subtotalPriceForAllItems = state.totalPriceForAllItems - state.shippingFlatRate;
+      state.cartItems = state.cartItems.filter(cartItem => cartItem.id !== itemToDelete.id);
     },
     removeItemByOneUnitByItsId(state, { payload }: PayloadAction<string>) {
-      const { id } = payload;
       // TODO: Make removeItemByOneUnitByItsId work
+      const { id } = payload;
+    },
+    addItemByOneUnitByItsId(state, { payload }: PayloadAction<string>) {
+      // TODO: Make addItemByOneUnitByItsId work
+      const { id } = payload;
     },
     clearCartCompletely(state) {
       state = initialState;
@@ -100,6 +107,12 @@ const shoppingCartSlice = createSlice({
   },
 });
 
-export const { addItemToCart, removeItemFromCartByItsIdCompletely, clearCartCompletely } = shoppingCartSlice.actions;
+export const {
+  addItemToCart,
+  removeItemFromCartByItsIdCompletely,
+  clearCartCompletely,
+  addItemByOneUnitByItsId,
+  removeItemByOneUnitByItsId
+} = shoppingCartSlice.actions;
 
 export default shoppingCartSlice.reducer;
