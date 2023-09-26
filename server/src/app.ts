@@ -1,15 +1,17 @@
 import express, { Application, NextFunction, Request, Response } from "express";
 import connectDB from "./helpers/db";
 import usersRouter from "./router/users";
+import productsRouter from "./router/products";
 
 const app: Application = express();
 
 connectDB();
 
 app.use(express.json());
-app.use("/users", usersRouter);
+app.use("/api/users", usersRouter);
+app.use("/api/products", productsRouter);
 
-app.get("/", (req: Request, res: Response, next: NextFunction) => {
+app.get("/api", (req: Request, res: Response, next: NextFunction) => {
   res.send("Express server with TypeScript");
 });
 
