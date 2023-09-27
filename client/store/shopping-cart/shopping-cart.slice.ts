@@ -93,13 +93,55 @@ const shoppingCartSlice = createSlice({
       state.subtotalPriceForAllItems = state.totalPriceForAllItems - state.shippingFlatRate;
       state.cartItems = state.cartItems.filter(cartItem => cartItem.id !== itemToDelete.id);
     },
-    removeItemByOneUnitByItsId(state, { payload }: PayloadAction<string>) {
-      // TODO: Make removeItemByOneUnitByItsId work
+    decreaseItemByOneUnitByItsId(state, { payload }: PayloadAction<string>) {
       const { id } = payload;
+      const itemToDecreaseByOneUnit = state.cartItems.find(item => item.id === id);
+
+      if (!itemToDecreaseByOneUnit) {
+        return;
+      }
+
+      if (itemToDecreaseByOneUnit.itemCount === 1) {
+        state.cartItems = state.cartItems.filter(cartItem => cartItem.id !== itemToDecreaseByOneUnit.id);
+        state.totalPriceForAllItems = state.totalPriceForAllItems - itemToDecreaseByOneUnit.price;
+        state.subtotalPriceForAllItems = state.totalPriceForAllItems - state.shippingFlatRate;
+        return;
+      }
+
+      state.cartItems = state.cartItems.map(cartItem => {
+        if (cartItem.id === itemToDecreaseByOneUnit.id) {
+          return {
+            ...cartItem,
+            itemCount: cartItem.itemCount - 1,
+            amountOfMoneyForItems: cartItem.amountOfMoneyForItems - cartItem.price,
+          };
+        }
+        return cartItem;
+      });
+      state.totalPriceForAllItems = state.totalPriceForAllItems - itemToDecreaseByOneUnit.price;
+      state.subtotalPriceForAllItems = state.totalPriceForAllItems - state.shippingFlatRate;
     },
-    addItemByOneUnitByItsId(state, { payload }: PayloadAction<string>) {
-      // TODO: Make addItemByOneUnitByItsId work
+    increaseItemByOneUnitByItsId(state, { payload }: PayloadAction<string>) {
       const { id } = payload;
+      const itemToIncreaseByOneUnit = state.cartItems.find(cartItem => cartItem.id === id);
+
+      if (!itemToIncreaseByOneUnit) {
+        return;
+      }
+
+      state.cartItems = state.cartItems.map(cartItem => {
+        if (cartItem.id === itemToIncreaseByOneUnit.id) {
+          return {
+            ...cartItem,
+            itemCount: cartItem.itemCount + 1,
+            amountOfMoneyForItems: cartItem.amountOfMoneyForItems + cartItem.price,
+          };
+        }
+        return cartItem;
+      });
+
+      state.totalPriceForAllItems = state.totalPriceForAllItems + itemToIncreaseByOneUnit.price;
+      state.subtotalPriceForAllItems = state.totalPriceForAllItems - state.shippingFlatRate;
     },
     clearCartCompletely(state) {
       state = initialState;
@@ -110,9 +152,9 @@ const shoppingCartSlice = createSlice({
 export const {
   addItemToCart,
   removeItemFromCartByItsIdCompletely,
+  decreaseItemByOneUnitByItsId,
+  increaseItemByOneUnitByItsId,
   clearCartCompletely,
-  addItemByOneUnitByItsId,
-  removeItemByOneUnitByItsId
 } = shoppingCartSlice.actions;
 
 export default shoppingCartSlice.reducer;

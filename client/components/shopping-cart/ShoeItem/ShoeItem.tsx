@@ -1,5 +1,8 @@
 import { useAppDispatch } from "@/hooks/redux-hooks";
-import { removeItemFromCartByItsIdCompletely } from "@/store/shopping-cart/shopping-cart.slice";
+import {
+  decreaseItemByOneUnitByItsId, increaseItemByOneUnitByItsId,
+  removeItemFromCartByItsIdCompletely,
+} from "@/store/shopping-cart/shopping-cart.slice";
 
 export function ShoeItem({
                            id,
@@ -12,6 +15,14 @@ export function ShoeItem({
 
   const removeItemFromCartHandler = () => {
     dispatch(removeItemFromCartByItsIdCompletely({ id }));
+  };
+
+  const decreaseItemByOneUnitHandler = () => {
+    dispatch(decreaseItemByOneUnitByItsId({ id }));
+  };
+
+  const increaseItemByOneUnitHandler = () => {
+    dispatch(increaseItemByOneUnitByItsId({ id }));
   };
 
   return (
@@ -41,13 +52,13 @@ export function ShoeItem({
       </div>
 
       <div className="shopping-cart-full__shoe-item-actions-middle">
-        <button className="shopping-cart-full__remove">
+        <button className="shopping-cart-full__remove" onClick={decreaseItemByOneUnitHandler}>
           <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
             <path d="M6 1L1 6L6 11" stroke="black" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </button>
         <span className="shopping-cart-full__count">{itemCount}</span>
-        <button className="shopping-cart-full__add">
+        <button className="shopping-cart-full__add" onClick={increaseItemByOneUnitHandler}>
           <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 11L6 6L1 1" stroke="black" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
