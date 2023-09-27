@@ -3,9 +3,11 @@ import { useRouter } from "next/router";
 import { MainSecondary } from "@/components/shared/MainSecondary/MainSecondary";
 import { Product } from "@/components/shared/Product/Product";
 import { useAppDispatch, useAppSelector } from "@/hooks/redux-hooks";
-import { addItemToCart } from "@/store/shopping-cart/shopping-cart.slice";
+import { addItemToCart, removeItemFromCartByItsIdCompletely } from "@/store/shopping-cart/shopping-cart.slice";
 import { fetchAllProducts, fetchSingleProductById } from "@/store/products/products.thunks";
 import { selectCurrentProduct, selectProductItems } from "@/store/products/products.selectors";
+import { selectCartItems } from "@/store/shopping-cart/shopping-cart.selectors";
+import { isProductInShoppingCart } from "@/helpers/shopping-cart";
 
 const LIMIT_FOR_PRODUCTS_MAPPED = 4;
 
@@ -13,8 +15,11 @@ export default function ProductPage() {
   const router = useRouter();
   const productSlug = router.query.productSlug;
   const dispatch = useAppDispatch();
+  const cartItems = useAppSelector(selectCartItems);
   const { items: products } = useAppSelector(selectProductItems);
   const currentProduct = useAppSelector(selectCurrentProduct);
+
+  const productInShoppingCart = isProductInShoppingCart(cartItems, currentProduct);
 
   useEffect(() => {
     dispatch(fetchAllProducts());
@@ -24,12 +29,19 @@ export default function ProductPage() {
     dispatch(fetchSingleProductById(productSlug));
   }, [productSlug]);
 
-  const addProductToCartHandler = () => {
+  const toggleProductInCartHandler = () => {
+
+
     if (currentProduct == null) {
       return;
     }
 
-    dispatch(addItemToCart({ item: currentProduct, count: 1 }));
+    if (!productInShoppingCart) {
+      dispatch(addItemToCart({ item: currentProduct, count: 1 }));
+      return;
+    }
+
+    dispatch(removeItemFromCartByItsIdCompletely({ id: currentProduct.id }));
   };
 
   return (
@@ -70,8 +82,8 @@ export default function ProductPage() {
 
             <div className="product__right">
               <div className="product__categories">For Men / Jordan / Delta 3 SP</div>
-              <h2 className="product__title">Jordan Delta 3 SP</h2>
-              <div className="product__price">$110</div>
+              <h2 className="product__title">{currentProduct?.name}</h2>
+              <div className="product__price">${currentProduct?.price}</div>
               <ul className="product__sizes">
                 <li className="product__size-item">6</li>
                 <li className="product__size-item">6.5</li>
@@ -91,8 +103,9 @@ export default function ProductPage() {
                 consequat, tortor enim, in consectetur amet, felis fames. Fringilla quis at sed tristique.are sed.</p>
 
               <div className="product__actions">
-                <button className="btn btn--grey product__add-to-cart-btn" onClick={addProductToCartHandler}>Add to
-                  cart
+                <button className="btn btn--grey product__add-to-cart-btn"
+                        onClick={toggleProductInCartHandler}>{!productInShoppingCart ? `Add to
+                  cart` : "Remove from cart"}
                 </button>
                 <button className="btn btn--transparent-red product__add-to-wishlist-btn">Add to wishlist</button>
               </div>
