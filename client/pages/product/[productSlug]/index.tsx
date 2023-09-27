@@ -16,7 +16,7 @@ export default function ProductPage() {
   const productSlug = router.query.productSlug;
   const dispatch = useAppDispatch();
   const cartItems = useAppSelector(selectCartItems);
-  const { items: products } = useAppSelector(selectProductItems);
+  const products = useAppSelector(selectProductItems);
   const currentProduct = useAppSelector(selectCurrentProduct);
 
   const productInShoppingCart = isProductInShoppingCart(cartItems, currentProduct);
@@ -30,8 +30,6 @@ export default function ProductPage() {
   }, [productSlug]);
 
   const toggleProductInCartHandler = () => {
-
-
     if (currentProduct == null) {
       return;
     }
