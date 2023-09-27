@@ -1,8 +1,11 @@
 import { useState } from "react";
-import { HeaderDropdown } from "@/components/layout/Header/HeaderDropdown";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+import { HeaderDropdown } from "@/components/layout/Header/HeaderDropdown";
 
 export function Header() {
+  const pathname = usePathname();
   const [isHamburgerMenuOpen, setIsHamburgerMenuOpen] = useState<boolean>(false);
 
   const openHamburgerMenuHandler = () => {
@@ -20,12 +23,12 @@ export function Header() {
           <div className="header__nav">
             <nav className="header__dropdowns">
               <ul className="header__dropdown-list">
-                <HeaderDropdown linkHref={"/"} title={"Home"} isDropdownActive={true} />
-                <HeaderDropdown linkHref={"/shop"} title={"Shop"} isDropdownActive={false} />
-                <HeaderDropdown linkHref={"/product"} title={"Product"} isDropdownActive={false} />
-                <HeaderDropdown linkHref={"/blog"} title={"Blog"} isDropdownActive={false} />
+                <HeaderDropdown linkHref={"/"} title={"Home"} isDropdownActive={pathname === "/"} />
+                <HeaderDropdown linkHref={"/shop"} title={"Shop"} isDropdownActive={pathname === "/shop"} />
+                <HeaderDropdown linkHref={"/product"} title={"Product"} isDropdownActive={pathname === "/product"} />
+                <HeaderDropdown linkHref={"/blog"} title={"Blog"} isDropdownActive={pathname === "/blog"} />
                 <li className="header__dropdown">
-                  <a href="#" className="header__link">Page</a>
+                  <Link href="/page" className="header__link">Page</Link>
                 </li>
 
               </ul>
