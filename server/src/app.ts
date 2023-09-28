@@ -1,16 +1,20 @@
-import {config} from "dotenv";
-import express, {Application, NextFunction, Request, Response} from "express";
-
-config();
+import express, { Application, NextFunction, Request, Response } from "express";
+import connectDB from "./helpers/db";
+import usersRouter from "./router/users";
+import productsRouter from "./router/products";
 
 const app: Application = express();
 
-app.get("/", (req: Request, res: Response, next: NextFunction) => {
+connectDB();
+
+app.use(express.json());
+app.use("/api/users", usersRouter);
+app.use("/api/products", productsRouter);
+
+app.get("/api", (req: Request, res: Response, next: NextFunction) => {
   res.send("Express server with TypeScript");
 });
 
-const PORT = process.env.PORT || 8000;
-
-app.listen(PORT, () => {
-  console.log(`Server is listening on port ${PORT}`);
+app.listen(process.env.PORT, () => {
+  console.log(`Server is listening on port ${process.env.PORT}`);
 });

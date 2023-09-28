@@ -24,10 +24,12 @@
     );
     column-gap: 3rem;
     row-gap: 5rem;
+    place-items: center;
     margin-bottom: 6rem;
   }
 
   &__product-item {
+    max-width: 30rem;
   }
 
   &__img {
