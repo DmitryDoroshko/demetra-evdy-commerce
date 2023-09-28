@@ -1,7 +1,21 @@
-import products from "@/data/shop-items.json";
+import { useState, useMemo } from "react";
 import { Product } from "@/components/shared/Product/Product";
+import { SHOP_ITEMS_COUNT_SIZE } from "@/constants/shop";
+import { useAppSelector } from "@/hooks/redux-hooks";
+import { selectProductItems } from "@/store/products/products.selectors";
+import { Pagination } from "@/components/shared/Pagination/Pagination";
 
 export function Shop() {
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const productItems = useAppSelector(selectProductItems);
+
+  // Memoize the current page's shop items loaded array in order not to recompute it multiple times
+  const currentTableData = useMemo(() => {
+    const firstPageIndex = (currentPage - 1) * SHOP_ITEMS_COUNT_SIZE;
+    const lastPageIndex = firstPageIndex + SHOP_ITEMS_COUNT_SIZE;
+    return productItems.slice(firstPageIndex, lastPageIndex);
+  }, [currentPage, productItems]);
+
   return (
     <main className="shop">
       <section className="our-products">
@@ -54,33 +68,14 @@ export function Shop() {
 
             <main className="our-products__items">
               {
-                products.items.map(item => {
+                currentTableData.map(item => {
                   return <Product key={item.id} image={item.image} imageAlternativeText={item.name} brand={item.brand}
                                   name={item.name} price={item.price} id={item.id} />;
                 })
               }
             </main>
-            <div className="pagination__pagination">
-              <button className="pagination__pagination-btn pagination__pagination-btn--left">
-                <svg xmlns="http://www.w3.org/2000/svg" width="6" height="8" viewBox="0 0 6 8" fill="none">
-                  <path d="M5 1L1 4L5 7" stroke="#989898" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-
-              <button className="pagination__pagination-btn active">1</button>
-              <button className="pagination__pagination-btn">2</button>
-              <button className="pagination__pagination-btn">3</button>
-              <button className="pagination__pagination-btn">4</button>
-              <button className="pagination__pagination-btn pagination__pagination-btn--dots">...</button>
-              <button className="pagination__pagination-btn">21</button>
-
-              <button className="pagination__pagination-btn pagination__pagination-btn--right">
-                <svg xmlns="http://www.w3.org/2000/svg" width="6" height="8" viewBox="0 0 6 8" fill="none">
-                  <path d="M1 7L5 4L1 1" stroke="#EF3636" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-
-            </div>
+            <Pagination onPageChange={(page: number) => setCurrentPage(page)} totalCount={productItems.length}
+                        currentPage={currentPage} pageSize={SHOP_ITEMS_COUNT_SIZE} />
           </div>
         </div>
       </section>

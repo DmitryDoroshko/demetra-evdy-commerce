@@ -30,6 +30,10 @@
       color: $color-white;
     }
 
+    &.disabled {
+      cursor: not-allowed;
+    }
+
     &--left {
       background: transparent;
     }
