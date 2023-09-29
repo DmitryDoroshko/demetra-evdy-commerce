@@ -78,7 +78,7 @@ export function Header() {
               </li>
 
               <li className="header__action">
-                <button className="header__btn">
+                <Link href={"/wishlist"} className="header__btn">
                   <svg className="header__icon" stroke="black" width="24" height="24" viewBox="0 0 24 24" fill="none"
                        xmlns="http://www.w3.org/2000/svg">
                     <g id="heart">
@@ -88,7 +88,7 @@ export function Header() {
                     </g>
                   </svg>
 
-                </button>
+                </Link>
               </li>
 
               <li className="header__action">

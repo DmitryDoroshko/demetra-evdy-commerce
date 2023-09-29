@@ -13,7 +13,6 @@ export const fetchAllProducts = createAsyncThunk("products/fetchAllProducts",
   },
 );
 
-// TODO: Create logic for fetchSingleProductById
 export const fetchSingleProductById = createAsyncThunk("products/fetchSingleProductById",
   async (productId: string) => {
     try {
