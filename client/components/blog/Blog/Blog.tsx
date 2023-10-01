@@ -230,5 +230,5 @@ export function Blog() {
         </div>
       </div>
     </main>
-);
+  );
 }

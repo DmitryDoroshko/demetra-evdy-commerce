@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { WishlistItem } from "@/components/wishlist/WishlistItem/WishlistItem";
+import { IWishlistItem } from "@/model/types";
 
-export function WishlistFull() {
+export function WishlistFull({ wishlistItems }: { wishlistItems: IWishlistItem[] }) {
   return (
     <main className="wishlist-full">
       <div className="container">
@@ -13,12 +14,16 @@ export function WishlistFull() {
               <th>status</th>
               <th></th>
             </tr>
-            <WishlistItem inStock={false} price={113} name={"NIKE AIR FORCE 2 ‘99"}
-                          imageSrc={"/assets/img/wishlist/1.png"} imageAlt={"Nike air"} />
-            <WishlistItem inStock={true} price={114} name={"NIKE AIR FORCE 1 ‘07"}
-                          imageSrc={"/assets/img/wishlist/2.png"} imageAlt={"Nike force"} />
-            <WishlistItem inStock={true} price={120} name={"Adidas 69 pro"} imageAlt={"Adidas"}
-                          imageSrc={"/assets/img/wishlist/3.png"} />
+            {wishlistItems.map(wishlistItem => {
+              return <WishlistItem key={wishlistItem.id}
+                                   id={wishlistItem.id}
+                                   inStock={wishlistItem.availabilityStatus === "in-stock"}
+                                   imageSrc={wishlistItem.image}
+                                   name={wishlistItem.name}
+                                   price={wishlistItem.price}
+                                   imageAlt={wishlistItem.image} />;
+            })
+            }
           </table>
           <div className="wishlist-full__actions">
             <Link href={"/shop"} className="btn btn--grey wishlist-full__back-to-shop-btn">Back to shop</Link>

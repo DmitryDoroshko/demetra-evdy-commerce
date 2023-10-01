@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function WishlistEmpty() {
   return (
     <main className="wishlist-empty">
@@ -14,7 +16,7 @@ export function WishlistEmpty() {
       <div className="wishlist-empty__actions">
         <div className="container">
           <div className="wishlist-empty__actions-inner">
-            <button className="btn btn&#45;&#45;grey wishlist-empty__go-to-shop-btn">Go to shop</button>
+            <Link href={"/shop"} className="btn btn&#45;&#45;grey wishlist-empty__go-to-shop-btn">Go to shop</Link>
           </div>
         </div>
       </div>

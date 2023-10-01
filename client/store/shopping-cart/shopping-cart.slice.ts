@@ -81,7 +81,7 @@ const shoppingCartSlice = createSlice({
       state.totalPriceForAllItems = newTotalPriceForAllItemsWithShippingFlatRate;
       state.subtotalPriceForAllItems = newTotalPriceForAllItemsWithShippingFlatRate - state.shippingFlatRate;
     },
-    removeItemFromCartByItsIdCompletely(state, { payload }: PayloadAction<string>) {
+    removeItemFromCartByItsIdCompletely(state, { payload }: PayloadAction<{ id: string; }>) {
       const { id } = payload;
       const itemToDelete = state.cartItems.find(item => item.id === id);
 
@@ -121,7 +121,7 @@ const shoppingCartSlice = createSlice({
       state.totalPriceForAllItems = state.totalPriceForAllItems - itemToDecreaseByOneUnit.price;
       state.subtotalPriceForAllItems = state.totalPriceForAllItems - state.shippingFlatRate;
     },
-    increaseItemByOneUnitByItsId(state, { payload }: PayloadAction<string>) {
+    increaseItemByOneUnitByItsId(state, { payload }: PayloadAction<{ id: string; }>) {
       const { id } = payload;
       const itemToIncreaseByOneUnit = state.cartItems.find(cartItem => cartItem.id === id);
 

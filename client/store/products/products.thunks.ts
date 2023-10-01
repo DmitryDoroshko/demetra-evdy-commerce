@@ -13,7 +13,7 @@ export const fetchAllProducts = createAsyncThunk("products/fetchAllProducts",
   },
 );
 
-export const fetchSingleProductById = createAsyncThunk("products/fetchSingleProductById",
+export const fetchCurrentProductById = createAsyncThunk("products/fetchSingleProductById",
   async (productId: string) => {
     try {
       const data: IProduct = await ProductsService.getInstance().getSingleProductById(productId);

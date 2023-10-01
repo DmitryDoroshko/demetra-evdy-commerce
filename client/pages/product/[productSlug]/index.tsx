@@ -4,10 +4,13 @@ import { MainSecondary } from "@/components/shared/MainSecondary/MainSecondary";
 import { Product } from "@/components/shared/Product/Product";
 import { useAppDispatch, useAppSelector } from "@/hooks/redux-hooks";
 import { addItemToCart, removeItemFromCartByItsIdCompletely } from "@/store/shopping-cart/shopping-cart.slice";
-import { fetchAllProducts, fetchSingleProductById } from "@/store/products/products.thunks";
+import { fetchAllProducts, fetchCurrentProductById } from "@/store/products/products.thunks";
 import { selectCurrentProduct, selectProductItems } from "@/store/products/products.selectors";
 import { selectCartItems } from "@/store/shopping-cart/shopping-cart.selectors";
 import { isProductInShoppingCart } from "@/helpers/shopping-cart";
+import { addProductToWishlist, removeProductFromWishlistById } from "@/store/wishlist/wishlist.slice";
+import { isProductInWishlist } from "@/helpers/wishlist";
+import { selectWishlistItems } from "@/store/wishlist/wishlist.selectors";
 
 const LIMIT_FOR_PRODUCTS_MAPPED = 4;
 
@@ -18,6 +21,7 @@ export default function ProductPage() {
   const cartItems = useAppSelector(selectCartItems);
   const products = useAppSelector(selectProductItems);
   const currentProduct = useAppSelector(selectCurrentProduct);
+  const wishlistItems = useAppSelector(selectWishlistItems);
 
   const productInShoppingCart = isProductInShoppingCart(cartItems, currentProduct);
 
@@ -26,7 +30,7 @@ export default function ProductPage() {
   }, []);
 
   useEffect(() => {
-    dispatch(fetchSingleProductById(productSlug));
+    dispatch(fetchCurrentProductById(productSlug));
   }, [productSlug]);
 
   const toggleProductInCartHandler = () => {
@@ -40,6 +44,19 @@ export default function ProductPage() {
     }
 
     dispatch(removeItemFromCartByItsIdCompletely({ id: currentProduct.id }));
+  };
+
+  const toggleProductInWishlistHandler = () => {
+    if (currentProduct == null) {
+      return;
+    }
+
+    if (currentProduct.isInWishlist) {
+      dispatch(removeProductFromWishlistById({ id: currentProduct.id }));
+      return;
+    }
+
+    dispatch(addProductToWishlist({ item: currentProduct }));
   };
 
   return (
@@ -105,7 +122,10 @@ export default function ProductPage() {
                         onClick={toggleProductInCartHandler}>{!productInShoppingCart ? `Add to
                   cart` : "Remove from cart"}
                 </button>
-                <button className="btn btn--transparent-red product__add-to-wishlist-btn">Add to wishlist</button>
+                <button className="btn btn--transparent-red product__add-to-wishlist-btn"
+                        onClick={toggleProductInWishlistHandler}>
+                  {!isProductInWishlist(wishlistItems, currentProduct) ? `Add to wishlist` : "Remove from wishlist"}
+                </button>
               </div>
 
               <div className="product__dropdown">
