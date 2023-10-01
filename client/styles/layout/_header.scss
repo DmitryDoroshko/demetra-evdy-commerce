@@ -30,7 +30,7 @@
 
   &__hamburger-menu &__hamburger-bar,
   &__hamburger-menu::before,
-  &__hamburger-menu::after  {
+  &__hamburger-menu::after {
     z-index: 100;
     content: "";
     display: block;
@@ -41,15 +41,15 @@
     transition: .4s;
   }
 
-  &__hamburger-menu.active::before  {
+  &__hamburger-menu.active::before {
     transform: rotate(-45deg) translate(-8px, 6px);
   }
 
-  &__hamburger-menu.active &__hamburger-bar  {
+  &__hamburger-menu.active &__hamburger-bar {
     opacity: 0;
   }
 
-  &__hamburger-menu.active::after  {
+  &__hamburger-menu.active::after {
     transform: rotate(45deg) translate(-9px, -8px);
   }
 
@@ -72,24 +72,35 @@
   }
 
   &__mobile-nav {
-    display: none;
     width: 0;
-    transition: width 0.5s ease-in;
+    transition: width 0.3s ease-in-out;
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    z-index: 98;
+    background-color: $color-black-2;
+    color: $color-white;
+    padding-top: 12rem;
 
     &.active {
-      @media only screen and (max-width: $breakpoint-large) {
-        display: grid;
-        place-items: center;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        min-height: 100vh;
-        z-index: 98;
-        background-color: $color-black-2;
-        color: $color-white;
-        padding-top: 12rem;
+      @media only screen and (min-width: $breakpoint-large) {
+        width: 0;
       }
+
+      width: 30%;
+
+      @media only screen and (max-width: $breakpoint-medium) {
+        width: 50%;
+      }
+
+      @media only screen and (max-width: 50em) {
+        width: 60%;
+      }
+
     }
   }
 
@@ -103,6 +114,7 @@
   &__dropdown-list {
     display: flex;
     gap: 4.8rem;
+
     &--mobile {
       display: flex;
       flex-direction: column;
