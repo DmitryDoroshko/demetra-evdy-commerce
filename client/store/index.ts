@@ -6,8 +6,8 @@ import products from "@/store/products/products.slice";
 export const store = configureStore({
   reducer: {
     shoppingCart,
-    products
-  }
+    products,
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;

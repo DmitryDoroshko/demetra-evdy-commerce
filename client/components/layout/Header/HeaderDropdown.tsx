@@ -7,12 +7,18 @@ interface IDropdownProps {
   className?: string;
 }
 
-export function HeaderDropdown({ title, isDropdownActive, linkHref, className }: IDropdownProps) {
-
+export function HeaderDropdown({
+  title,
+  isDropdownActive,
+  linkHref,
+  className,
+}: IDropdownProps) {
   return (
     <li className={`dropdown ${className}`}>
       <div className={`dropdown__head ${isDropdownActive ? "active" : ""}`}>
-        <Link href={linkHref} className={`dropdown__head-link`}>{title}</Link>
+        <Link href={linkHref} className={`dropdown__head-link`}>
+          {title}
+        </Link>
         <span className="dropdown__head-icon"></span>
       </div>
       <div className="dropdown__content-items">

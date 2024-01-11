@@ -95,38 +95,54 @@ export function MainSlider() {
   return (
     <>
       <div className="main__slider">
-        <button className="main__slider-btn main__slider-btn--left btn btn--grey-transparent" onClick={goToPrevious}>
-          <img
-            src="/assets/img/main/left.png" alt="Left arrow" /></button>
-        <div className={`main__slider-content ${isSliderItemActive ? "active" : ""}`}>
+        <button
+          className="main__slider-btn main__slider-btn--left btn btn--grey-transparent"
+          onClick={goToPrevious}
+        >
+          <img src="/assets/img/main/left.png" alt="Left arrow" />
+        </button>
+        <div
+          className={`main__slider-content ${
+            isSliderItemActive ? "active" : ""
+          }`}
+        >
           <div className="main__slider-texts">
-            <h1 className="main__slider-heading">
-              {currentSlideData.heading}
-            </h1>
-            <p className="main__slider-text">
-              {currentSlideData.text}
-            </p>
+            <h1 className="main__slider-heading">{currentSlideData.heading}</h1>
+            <p className="main__slider-text">{currentSlideData.text}</p>
             <button className="main__slider-btn-main btn btn--grey">
               Read More
             </button>
           </div>
 
           <div className="main__slider-picture">
-            <img src={currentSlideData.image} alt="Shoes" className="main__slider-img" />
+            <img
+              src={currentSlideData.image}
+              alt="Shoes"
+              className="main__slider-img"
+            />
           </div>
         </div>
-        <button className="main__slider-btn main__slider-btn--right btn btn--grey-transparent" onClick={goToNext}><img
-          src="/assets/img/main/right.png" alt="Right arrow" /></button>
+        <button
+          className="main__slider-btn main__slider-btn--right btn btn--grey-transparent"
+          onClick={goToNext}
+        >
+          <img src="/assets/img/main/right.png" alt="Right arrow" />
+        </button>
       </div>
 
       <div className="main__slider-controls">
         {sliderContent.map((slide, slideIndex) => {
-          return <button key={slideIndex}
-                         onClick={() => goToSlide(slideIndex)}
-                         className={`main__slider-control btn--slider ${slideIndex === currentIndex ? "active" : ""}`}></button>;
+          return (
+            <button
+              key={slideIndex}
+              onClick={() => goToSlide(slideIndex)}
+              className={`main__slider-control btn--slider ${
+                slideIndex === currentIndex ? "active" : ""
+              }`}
+            ></button>
+          );
         })}
       </div>
     </>
   );
 }
-

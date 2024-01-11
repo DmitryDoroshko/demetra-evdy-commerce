@@ -10,11 +10,15 @@ export default function ShopPage() {
     dispatch(fetchAllProducts());
   }, []);
 
-  return <>
-    <MainSecondary image={"/assets/img/main-secondary/shop.png"}
-                   imageAlternativeText={"Shop picture"}
-                   subtitle={"Home / Shop"}
-                   title={"Shop"} />
-    <Shop />
-  </>;
+  return (
+    <>
+      <MainSecondary
+        image={"/assets/img/main-secondary/shop.png"}
+        imageAlternativeText={"Shop picture"}
+        subtitle={"Home / Shop"}
+        title={"Shop"}
+      />
+      <Shop />
+    </>
+  );
 }
