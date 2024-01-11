@@ -18,7 +18,12 @@ export interface IUsePaginationProps {
   currentPage: number;
 }
 
-export const usePagination = ({ totalCount, pageSize, siblingCount = 1, currentPage }: IUsePaginationProps) => {
+export const usePagination = ({
+  totalCount,
+  pageSize,
+  siblingCount = 1,
+  currentPage,
+}: IUsePaginationProps) => {
   const paginationRange = useMemo(() => {
     const totalPageCount = Math.ceil(totalCount / pageSize);
 
@@ -68,7 +73,6 @@ export const usePagination = ({ totalCount, pageSize, siblingCount = 1, currentP
     	Case 3: No right dots to show, but left dots to be shown
     */
     if (shouldShowLeftDots && !shouldShowRightDots) {
-
       let rightItemCount = 3 + 2 * siblingCount;
       let rightRange = range(
         totalPageCount - rightItemCount + 1,
@@ -87,4 +91,4 @@ export const usePagination = ({ totalCount, pageSize, siblingCount = 1, currentP
   }, [totalCount, pageSize, siblingCount, currentPage]);
 
   return paginationRange;
-}
+};

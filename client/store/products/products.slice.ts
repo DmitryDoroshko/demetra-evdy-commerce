@@ -1,6 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IProduct } from "@/model/types";
-import { fetchAllProducts, fetchCurrentProductById } from "@/store/products/products.thunks";
+import {
+  fetchAllProducts,
+  fetchSingleProductById,
+} from "@/store/products/products.thunks";
 
 export interface IProductsState {
   productItems: IProduct[];
@@ -17,7 +20,7 @@ const initialState: IProductsState = {
   productItemsLoadError: null,
   currentProduct: null,
   currentProductLoading: false,
-  currentProductLoadError: null
+  currentProductLoadError: null,
 };
 
 const productsSlice = createSlice({
@@ -55,11 +58,11 @@ const productsSlice = createSlice({
         state.currentProductLoading = false;
         state.currentProductLoadError = null;
       })
-      .addCase(fetchCurrentProductById.rejected, (state => {
+      .addCase(fetchSingleProductById.rejected, (state) => {
         state.currentProductLoadError = "Failed to fetch single product";
         state.currentProduct = null;
         state.currentProductLoading = false;
-      }));
+      });
   },
 });
 

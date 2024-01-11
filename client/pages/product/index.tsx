@@ -13,12 +13,14 @@ export default function ProductPage() {
 
   return (
     <>
-      <MainSecondary image={"/assets/img/main-secondary/product.png"}
-                     imageAlternativeText={"Shop picture"}
-                     subtitle={"Home / Shop"}
-                     title={"Shop"} />
+      <MainSecondary
+        image={"/assets/img/main-secondary/product.png"}
+        imageAlternativeText={"Shop picture"}
+        subtitle={"Home / Shop"}
+        title={"Shop"}
+      />
 
-      <Shop/>
+      <Shop />
     </>
   );
 }
