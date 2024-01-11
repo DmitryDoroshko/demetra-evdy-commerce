@@ -8,8 +8,6 @@ export function Header() {
   const pathname = usePathname();
   const [isHamburgerMenuOpen, setIsHamburgerMenuOpen] =
     useState<boolean>(false);
-  const [isHamburgerMenuOpen, setIsHamburgerMenuOpen] =
-    useState<boolean>(false);
 
   const openHamburgerMenuHandler = () => {
     setIsHamburgerMenuOpen((prevState) => !prevState);
@@ -21,7 +19,6 @@ export function Header() {
         <div className="header__inner">
           <div className="header__logo">Evdy Commerce</div>
 
-          <HeaderNavigation />
           <div className="header__nav">
             <nav className="header__dropdowns">
               <ul className="header__dropdown-list">
