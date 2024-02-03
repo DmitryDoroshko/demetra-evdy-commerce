@@ -14,7 +14,7 @@ export class ProductsService {
   async getAllProducts(): Promise<IProduct[]> {
     try {
       const response = await http.get("/products");
-      return response.data.data.items;
+      return response.data.items;
     } catch (error) {
       console.log("Error fetching all products", error);
       throw error;
@@ -24,7 +24,7 @@ export class ProductsService {
   async getSingleProductById(productId: string): Promise<IProduct> {
     try {
       const response = await http.get(`/products/${productId}`);
-      return response.data.data;
+      return response.data;
     } catch (error) {
       console.log("Error fetching single product", error);
       throw error;

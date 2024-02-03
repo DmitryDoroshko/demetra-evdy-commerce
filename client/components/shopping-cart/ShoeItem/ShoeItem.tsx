@@ -29,7 +29,7 @@ export function ShoeItem({
   };
 
   const increaseItemByOneUnitHandler = () => {
-    dispatch(increaseItemByOneUnitByItsId(id));
+    dispatch(increaseItemByOneUnitByItsId({ id }));
   };
 
   return (

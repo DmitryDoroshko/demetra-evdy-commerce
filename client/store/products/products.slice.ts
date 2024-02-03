@@ -49,15 +49,6 @@ const productsSlice = createSlice({
       });
 
     builder
-      .addCase(fetchCurrentProductById.pending, (state) => {
-        state.currentProductLoading = true;
-        state.currentProductLoadError = null;
-      })
-      .addCase(fetchCurrentProductById.fulfilled, (state, action) => {
-        state.currentProduct = action.payload;
-        state.currentProductLoading = false;
-        state.currentProductLoadError = null;
-      })
       .addCase(fetchSingleProductById.rejected, (state) => {
         state.currentProductLoadError = "Failed to fetch single product";
         state.currentProduct = null;

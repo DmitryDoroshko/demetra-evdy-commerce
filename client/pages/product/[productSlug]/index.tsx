@@ -8,7 +8,7 @@ import {
   removeItemFromCartByItsIdCompletely,
 } from "@/store/shopping-cart/shopping-cart.slice";
 import {
-  fetchAllProducts,
+  fetchAllProducts, fetchCurrentProductById,
   fetchSingleProductById,
 } from "@/store/products/products.thunks";
 import {

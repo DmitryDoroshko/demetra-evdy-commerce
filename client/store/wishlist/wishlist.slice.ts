@@ -5,7 +5,7 @@ export interface IWishlistState {
   wishlistItems: IWishlistItem[];
 }
 
-const initialState = {
+const initialState: IWishlistState = {
   wishlistItems: [],
 };
 

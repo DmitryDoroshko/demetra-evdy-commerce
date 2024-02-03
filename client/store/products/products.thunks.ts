@@ -28,3 +28,7 @@ export const fetchSingleProductById = createAsyncThunk(
     }
   }
 );
+
+export const fetchCurrentProductById = createAsyncThunk("products/fetchCurrentProductById", async () => {
+
+});

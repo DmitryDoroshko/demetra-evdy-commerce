@@ -124,7 +124,7 @@ const shoppingCartSlice = createSlice({
       );
     },
     decreaseItemByOneUnitByItsId(state, { payload }: PayloadAction<string>) {
-      const { id } = payload;
+      const id = payload;
       const itemToDecreaseByOneUnit = state.cartItems.find(
         (item) => item.id === id
       );
@@ -201,7 +201,6 @@ export const {
   removeItemFromCartByItsIdCompletely,
   decreaseItemByOneUnitByItsId,
   increaseItemByOneUnitByItsId,
-  clearCartCompletely,
 } = shoppingCartSlice.actions;
 
 export default shoppingCartSlice.reducer;

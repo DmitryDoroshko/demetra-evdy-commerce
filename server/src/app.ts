@@ -1,5 +1,5 @@
 import express, { Application, NextFunction, Request, Response } from "express";
-import connectDB from "./helpers/db";
+import { connectDB } from "./helpers/db";
 import usersRouter from "./router/users";
 import productsRouter from "./router/products";
 

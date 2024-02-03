@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { IProduct, Product } from "../models/product";
 
 const connectDB = async () => {
   try {
@@ -10,4 +11,23 @@ const connectDB = async () => {
   }
 };
 
-export default connectDB;
+const getAllProductsFromDb = async (): Promise<IProduct[]> => {
+  try {
+    const products = await Product.find({});
+    console.log('getAllProductsFromDb', { products });
+    return products;
+  } catch (error) {
+    throw new Error("Error fetching products from MongoDB");
+  }
+};
+
+const getSingleProductFromDbById = async (productId: string): Promise<IProduct | null> => {
+  try {
+    const product = await Product.findOne({ id: productId });
+    return product;
+  } catch (error) {
+    throw new Error("Error fetching single product from MongoDB");
+  }
+};
+
+export { getAllProductsFromDb, getSingleProductFromDbById, connectDB };

@@ -14,6 +14,8 @@ export default function Home() {
 
   const products = useAppSelector(selectProductItems);
 
+  console.log({ products });
+
   useEffect(() => {
     dispatch(fetchAllProducts());
   }, []);
@@ -74,7 +76,7 @@ export default function Home() {
 
             <main className="our-products__items">
               {
-                products.slice(0, LIMIT_FOR_PRODUCTS_MAPPED).map(item => {
+                products?.slice(0, LIMIT_FOR_PRODUCTS_MAPPED).map(item => {
                   return <Product key={item.id} image={item.image} imageAlternativeText={item.name} brand={item.brand}
                                   name={item.name} price={item.price} id={item.id} />;
                 })
