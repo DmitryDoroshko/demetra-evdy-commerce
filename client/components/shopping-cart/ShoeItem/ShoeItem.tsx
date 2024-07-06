@@ -6,12 +6,12 @@ import {
 } from "@/store/shopping-cart/shopping-cart.slice";
 
 export function ShoeItem({
-  id,
-  amountOfMoneyForItems,
-  itemCount,
-  pictureSrc,
-  name,
-}: {
+                           id,
+                           amountOfMoneyForItems,
+                           itemCount,
+                           pictureSrc,
+                           name,
+                         }: {
   id: string;
   amountOfMoneyForItems: number;
   itemCount: number;
@@ -25,11 +25,11 @@ export function ShoeItem({
   };
 
   const decreaseItemByOneUnitHandler = () => {
-    dispatch(decreaseItemByOneUnitByItsId(id));
+    dispatch(decreaseItemByOneUnitByItsId({ id }));
   };
 
   const increaseItemByOneUnitHandler = () => {
-    dispatch(increaseItemByOneUnitByItsId(id));
+    dispatch(increaseItemByOneUnitByItsId({ id }));
   };
 
   return (

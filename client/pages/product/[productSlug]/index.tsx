@@ -38,7 +38,9 @@ export default function ProductPage() {
   }, []);
 
   useEffect(() => {
-    dispatch(fetchSingleProductById(productSlug));
+    if (typeof productSlug === "string") {
+      dispatch(fetchSingleProductById(productSlug));
+    }
   }, [productSlug]);
 
   const toggleProductInCartHandler = () => {
@@ -148,8 +150,7 @@ export default function ProductPage() {
                   onClick={toggleProductInCartHandler}
                 >
                   {!productInShoppingCart
-                    ? `Add to
-                  cart`
+                    ? `Add to cart`
                     : "Remove from cart"}
                 </button>
                 <button className="btn btn--transparent-red product__add-to-wishlist-btn">

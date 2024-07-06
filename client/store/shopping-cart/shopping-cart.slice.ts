@@ -27,7 +27,7 @@ const shoppingCartSlice = createSlice({
   reducers: {
     addItemToCart(
       state,
-      { payload }: PayloadAction<{ item: ICartItem; count: number }>
+      { payload }: PayloadAction<{ item: ICartItem; count: number }>,
     ) {
       const { item, count } = payload;
 
@@ -105,7 +105,7 @@ const shoppingCartSlice = createSlice({
     },
     removeItemFromCartByItsIdCompletely(
       state,
-      { payload }: PayloadAction<{ id: string }>
+      { payload }: PayloadAction<{ id: string }>,
     ) {
       const { id } = payload;
       const itemToDelete = state.cartItems.find((item) => item.id === id);
@@ -120,13 +120,13 @@ const shoppingCartSlice = createSlice({
       state.subtotalPriceForAllItems =
         state.totalPriceForAllItems - state.shippingFlatRate;
       state.cartItems = state.cartItems.filter(
-        (cartItem) => cartItem.id !== itemToDelete.id
+        (cartItem) => cartItem.id !== itemToDelete.id,
       );
     },
-    decreaseItemByOneUnitByItsId(state, { payload }: PayloadAction<string>) {
+    decreaseItemByOneUnitByItsId(state, { payload }: PayloadAction<{ id: string; }>) {
       const { id } = payload;
       const itemToDecreaseByOneUnit = state.cartItems.find(
-        (item) => item.id === id
+        (item) => item.id === id,
       );
 
       if (!itemToDecreaseByOneUnit) {
@@ -135,7 +135,7 @@ const shoppingCartSlice = createSlice({
 
       if (itemToDecreaseByOneUnit.itemCount === 1) {
         state.cartItems = state.cartItems.filter(
-          (cartItem) => cartItem.id !== itemToDecreaseByOneUnit.id
+          (cartItem) => cartItem.id !== itemToDecreaseByOneUnit.id,
         );
         state.totalPriceForAllItems =
           state.totalPriceForAllItems - itemToDecreaseByOneUnit.price;
@@ -160,10 +160,10 @@ const shoppingCartSlice = createSlice({
       state.subtotalPriceForAllItems =
         state.totalPriceForAllItems - state.shippingFlatRate;
     },
-    increaseItemByOneUnitByItsId(state, { payload }: PayloadAction<string>) {
+    increaseItemByOneUnitByItsId(state, { payload }: PayloadAction<{ id: string; }>) {
       const { id } = payload;
       const itemToIncreaseByOneUnit = state.cartItems.find(
-        (cartItem) => cartItem.id === id
+        (cartItem) => cartItem.id === id,
       );
 
       if (!itemToIncreaseByOneUnit) {

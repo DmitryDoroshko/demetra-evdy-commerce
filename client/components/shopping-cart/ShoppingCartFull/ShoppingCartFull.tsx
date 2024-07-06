@@ -21,6 +21,19 @@ export function ShoppingCartFull({
   );
   const shippingFlatRate = useAppSelector(selectShippingFlatRate);
 
+  const shopCartItemsRendered = shoppingCartItems.map((item) => {
+    return (
+      <ShoeItem
+        key={item.id}
+        id={item.id}
+        amountOfMoneyForItems={item.amountOfMoneyForItems}
+        itemCount={item.itemCount!}
+        pictureSrc={item.image}
+        name={item.name}
+      />
+    );
+  });
+
   if (cartItemsLoading) {
     return <h1>Loading...</h1>;
   }
@@ -33,18 +46,7 @@ export function ShoppingCartFull({
             <h2 className="shopping-cart-full__heading">Product</h2>
             <div className="shopping-cart-full__content">
               <div className="shopping-cart-full__content-left">
-                {shoppingCartItems.map((item) => {
-                  return (
-                    <ShoeItem
-                      key={item.id}
-                      id={item.id}
-                      amountOfMoneyForItems={item.amountOfMoneyForItems}
-                      itemCount={item.itemCount!}
-                      pictureSrc={item.image}
-                      name={item.name}
-                    />
-                  );
-                })}
+                {shopCartItemsRendered}
               </div>
 
               <CartTotals
