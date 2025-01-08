@@ -126,7 +126,7 @@ export function Footer() {
             </div>
           </div>
           <div className="footer__copy">
-            <p className="footer__copy-text">Copyright © 2023 Evdy Commerce</p>
+            <p className="footer__copy-text">Copyright © {new Date().getUTCFullYear()} Evdy Commerce</p>
 
             <p className="footer__copy-text">All right reserved</p>
           </div>

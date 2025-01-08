@@ -1,7 +1,7 @@
 import { MainSecondary } from "@/components/shared/MainSecondary/MainSecondary";
 import { Shop } from "@/components/shop/Shop/Shop";
 import { useEffect } from "react";
-import { fetchAllProducts } from "@/store/products/products.thunks";
+import { fetchAllProducts } from "@/store/products/products.actions";
 import { useAppDispatch } from "@/hooks/redux-hooks";
 
 export default function ShopPage() {

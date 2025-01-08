@@ -12,6 +12,14 @@ Allow reset password functionality.
 
 Add to wishlist functionality.
 
-Add Blog page.
+Get products from DB and not from a local file.
 
+Add docker support.
 
+Sign up vs sign in pages.
+
+Make footer at the bottom of page and make it stick there.
+
+Validate the form for sign-up / sign-in. Use something like 'zod'.
+
+Localization for EN / UA / RU

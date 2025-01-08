@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useAppDispatch } from "@/hooks/redux-hooks";
 
 import { MainSecondary } from "@/components/shared/MainSecondary/MainSecondary";
-import { fetchAllProducts } from "@/store/products/products.thunks";
+import { fetchAllProducts } from "@/store/products/products.actions";
 import { Shop } from "@/components/shop/Shop/Shop";
 
 export default function ProductPage() {
