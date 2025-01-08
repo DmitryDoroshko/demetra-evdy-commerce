@@ -10,7 +10,7 @@ import {
 import {
   fetchAllProducts,
   fetchSingleProductById,
-} from "@/store/products/products.thunks";
+} from "@/store/products/products.actions";
 import {
   selectCurrentProduct,
   selectProductItems,
@@ -30,7 +30,7 @@ export default function ProductPage() {
 
   const productInShoppingCart = isProductInShoppingCart(
     cartItems,
-    currentProduct
+    currentProduct,
   );
 
   useEffect(() => {
@@ -49,12 +49,28 @@ export default function ProductPage() {
     }
 
     if (!productInShoppingCart) {
+      // TODO: Fix this warning
+      // @ts-ignore
       dispatch(addItemToCart({ item: currentProduct, count: 1 }));
       return;
     }
 
     dispatch(removeItemFromCartByItsIdCompletely({ id: currentProduct.id }));
   };
+
+  const renderedProducts = products?.slice(0, LIMIT_FOR_PRODUCTS_MAPPED).map((item) => {
+    return (
+      <Product
+        key={item.id}
+        image={item.image}
+        imageAlternativeText={item.name}
+        brand={item.brand}
+        name={item.name}
+        price={item.price}
+        id={item.id}
+      />
+    );
+  });
 
   return (
     <>
@@ -261,19 +277,7 @@ export default function ProductPage() {
             <h2 className="our-products__heading">other products</h2>
 
             <main className="our-products__items">
-              {products?.slice(0, LIMIT_FOR_PRODUCTS_MAPPED).map((item) => {
-                return (
-                  <Product
-                    key={item.id}
-                    image={item.image}
-                    imageAlternativeText={item.name}
-                    brand={item.brand}
-                    name={item.name}
-                    price={item.price}
-                    id={item.id}
-                  />
-                );
-              })}
+              {renderedProducts}
             </main>
 
             <div className="our-products__show-more-wrapper">
