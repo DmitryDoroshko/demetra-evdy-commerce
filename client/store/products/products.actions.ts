@@ -1,5 +1,5 @@
-import { ProductsService } from "@/service/products-service";
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { productsService } from "@/service/products/products-service";
 import { IProduct } from "@/model/types";
 
 export const fetchAllProducts = createAsyncThunk(
@@ -7,7 +7,7 @@ export const fetchAllProducts = createAsyncThunk(
   async () => {
     try {
       const data: IProduct[] =
-        await ProductsService.getInstance().getAllProducts();
+        await productsService.getAllProducts();
       return data;
     } catch (error) {
       throw error;
@@ -21,7 +21,7 @@ export const fetchSingleProductById = createAsyncThunk(
   async (productId: string) => {
     try {
       const data: IProduct =
-        await ProductsService.getInstance().getSingleProductById(productId);
+        await productsService.getSingleProductById(productId);
       return data;
     } catch (error) {
       throw error;

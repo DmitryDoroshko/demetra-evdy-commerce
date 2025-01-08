@@ -2,7 +2,7 @@ import { Document, Schema, model, Model } from "mongoose";
 import bcrypt from "bcrypt";
 
 interface IUser extends Document {
-  user_name: string;
+  username: string;
   email: string;
   password: string;
   role: string;
@@ -14,7 +14,7 @@ interface IUserModel extends IUser {
 }
 
 const userSchema = new Schema({
-  user_name: {
+  username: {
     type: String,
     required: true,
     unique: true,

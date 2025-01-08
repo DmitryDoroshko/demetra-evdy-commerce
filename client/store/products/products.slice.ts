@@ -3,7 +3,7 @@ import { IProduct } from "@/model/types";
 import {
   fetchAllProducts,
   fetchSingleProductById,
-} from "@/store/products/products.thunks";
+} from "@/store/products/products.actions";
 
 export interface IProductsState {
   productItems: IProduct[];

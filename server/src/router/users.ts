@@ -7,11 +7,12 @@ import User from "../models/user";
 import ResponseHelper from "../helpers/responseHelper";
 import { IUser, IUserLogin } from "../types/User";
 import { authorize } from "../middleware/auth";
+import Token from "../models/token";
 
 const router = Router();
 
-export const register = async (req: Request, res: Response) => {
-  const { user_name, email, password, role }: IUser = req.body;
+export const signUp = async (req: Request, res: Response) => {
+  const { username, email, password, role }: IUser = req.body;
 
   try {
     const errors = validationResult(req);
@@ -27,7 +28,7 @@ export const register = async (req: Request, res: Response) => {
     }
 
     const userObj = new User({
-      user_name,
+      username,
       email,
       password,
       role,
@@ -47,7 +48,7 @@ export const register = async (req: Request, res: Response) => {
   }
 };
 
-export const login = async (req: Request, res: Response) => {
+export const signIn = async (req: Request, res: Response) => {
   const { email, password }: IUserLogin = req.body;
   try {
     const errors = validationResult(req);
@@ -97,7 +98,7 @@ export const login = async (req: Request, res: Response) => {
       data: {
         token,
         user: {
-          name: user.user_name, role: user.role,
+          name: user.username, role: user.role,
         },
       },
     });
@@ -107,7 +108,7 @@ export const login = async (req: Request, res: Response) => {
   }
 };
 
-export const profile = async (req: Request, res: Response) => {
+export const getUser = async (req: Request, res: Response) => {
   const { id } = req.body.user;
   try {
     const user = await User.findOne({ _id: id });
@@ -134,8 +135,37 @@ export const profile = async (req: Request, res: Response) => {
   }
 };
 
-router.get("/", authorize, profile);
-router.post("/", register);
-router.post("/sign-in", login);
+export const signOut = async (req: Request, res: Response) => {
+  try {
+    const token = req.headers.authorization?.split(' ')[1];
+    if (!token) {
+      return ResponseHelper.response({
+        res,
+        code: 400,
+        success: false,
+        message: 'Token is required',
+        data: {},
+      });
+    }
+
+    const tokenObj = new Token({ token });
+    await tokenObj.save();
+
+    return ResponseHelper.response({
+      res,
+      code: 200,
+      success: true,
+      message: 'Successfully signed out!',
+      data: {},
+    });
+  } catch (error) {
+    return ResponseHelper.error({ res, err: error });
+  }
+};
+
+router.get("/user", authorize, getUser);
+router.post("/sign-up", signUp);
+router.post("/sign-in", signIn);
+router.post("/sign-out", authorize, signOut);
 
 export default router;

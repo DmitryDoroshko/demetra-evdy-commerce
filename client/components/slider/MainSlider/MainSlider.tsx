@@ -92,6 +92,18 @@ export function MainSlider() {
     setIsSliderItemActive(true);
   };
 
+  const renderedSliderContent = sliderContent.map((slide, slideIndex) => {
+    return (
+      <button
+        key={slideIndex}
+        onClick={() => goToSlide(slideIndex)}
+        className={`main__slider-control btn--slider ${
+          slideIndex === currentIndex ? "active" : ""
+        }`}
+      ></button>
+    );
+  });
+
   return (
     <>
       <div className="main__slider">
@@ -131,17 +143,7 @@ export function MainSlider() {
       </div>
 
       <div className="main__slider-controls">
-        {sliderContent.map((slide, slideIndex) => {
-          return (
-            <button
-              key={slideIndex}
-              onClick={() => goToSlide(slideIndex)}
-              className={`main__slider-control btn--slider ${
-                slideIndex === currentIndex ? "active" : ""
-              }`}
-            ></button>
-          );
-        })}
+        {renderedSliderContent}
       </div>
     </>
   );

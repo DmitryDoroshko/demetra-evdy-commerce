@@ -1,7 +1,7 @@
-import http from "./http-common";
+import http from "../http-common";
 import { IProduct } from "@/model/types";
 
-export class ProductsService {
+class ProductsService {
   private static instance: ProductsService;
 
   static getInstance(): ProductsService {
@@ -31,3 +31,5 @@ export class ProductsService {
     }
   }
 }
+
+export const productsService = new ProductsService();

@@ -1,0 +1,17 @@
+=== Working on ===
+Sign In, Sign Up:
+  Send data to backend and receive response.
+  Figure out which endpoint to send the request to.
+
+to do:
+/product/p1111ID When pressing add to cart => toast appears on the screen.
+
+Save data of login somewhere (localStorage, cookie), figure out where to store it.
+
+Allow reset password functionality.
+
+Add to wishlist functionality.
+
+Add Blog page.
+
+

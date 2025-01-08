@@ -4,7 +4,7 @@ import { Newsletter } from "@/components/shared/Newsletter/Newsletter";
 import { MainSlider } from "@/components/slider/MainSlider/MainSlider";
 import products from "@/data/shop-items.json";
 import { Product } from "@/components/shared/Product/Product";
-import { fetchAllProducts } from "@/store/products/products.thunks";
+import { fetchAllProducts } from "@/store/products/products.actions";
 import { useAppDispatch } from "@/hooks/redux-hooks";
 
 const LIMIT_FOR_PRODUCTS_MAPPED = 8;
