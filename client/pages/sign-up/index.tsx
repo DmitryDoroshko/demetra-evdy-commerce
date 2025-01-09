@@ -1,7 +1,7 @@
-import { useForm, SubmitHandler } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { useAppDispatch } from "@/hooks/redux-hooks";
-import { setAuthData } from "@/store/auth/auth.slice";
 import Link from "next/link";
+import { signUp } from "@/store/auth/auth.actions";
 
 interface ISignUpInputs {
   username: string;
@@ -15,7 +15,7 @@ export default function SignUpPage() {
   const { register, handleSubmit, watch, formState: { errors } } = useForm<ISignUpInputs>();
 
   const onSubmit: SubmitHandler<ISignUpInputs> = async (data) => {
-    dispatch(setAuthData({ ...data, isAuthenticated: false, user: null }));
+    dispatch(signUp({ email: data.email, password: data.password, username: data.username }));
   };
 
   return (

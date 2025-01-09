@@ -14,6 +14,18 @@ const router = Router();
 export const signUp = async (req: Request, res: Response) => {
   const { username, email, password, role }: IUser = req.body;
 
+  const emailAlreadyExists = await User.findOne({ email: email });
+
+  if (emailAlreadyExists) {
+    return ResponseHelper.response({
+      res,
+      code: 400,
+      success: false,
+      message: "Email already in use.",
+      data: {},
+    });
+  }
+
   try {
     const errors = validationResult(req);
 
@@ -102,8 +114,7 @@ export const signIn = async (req: Request, res: Response) => {
         },
       },
     });
-  }
-  catch (error) {
+  } catch (error) {
     return ResponseHelper.error({ res, err: error });
   }
 };
@@ -137,13 +148,13 @@ export const getUser = async (req: Request, res: Response) => {
 
 export const signOut = async (req: Request, res: Response) => {
   try {
-    const token = req.headers.authorization?.split(' ')[1];
+    const token = req.headers.authorization?.split(" ")[1];
     if (!token) {
       return ResponseHelper.response({
         res,
         code: 400,
         success: false,
-        message: 'Token is required',
+        message: "Token is required",
         data: {},
       });
     }
@@ -155,7 +166,7 @@ export const signOut = async (req: Request, res: Response) => {
       res,
       code: 200,
       success: true,
-      message: 'Successfully signed out!',
+      message: "Successfully signed out!",
       data: {},
     });
   } catch (error) {

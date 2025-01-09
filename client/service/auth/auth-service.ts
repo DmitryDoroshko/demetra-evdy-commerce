@@ -12,22 +12,22 @@ class AuthService {
   }
 
   async signUp(body: ISignUpBody) {
-    const response = await http.post("/sign-up", body);
+    const response = await http.post("/users/sign-up", body);
     return response;
   }
 
   async signIn(body: ISignInBody) {
-    const response = await http.post("/sign-in", body);
+    const response = await http.post("/users/sign-in", body);
     return response;
   }
 
   async getUser() {
-    const { data } = await http.get("/user");
+    const { data } = await http.get("/users/user");
     return { data };
   }
 
   async signOut() {
-    const { data } = await http.post("/sign-out");
+    const { data } = await http.post("/users/sign-out");
     return { data };
   }
 }

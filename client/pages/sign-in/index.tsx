@@ -1,6 +1,9 @@
-import { useForm, SubmitHandler } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { useAppDispatch } from "@/hooks/redux-hooks";
 import Link from "next/link";
+import { signIn } from "@/store/auth/auth.actions";
+import { loginSuccess } from "@/store/auth/auth.slice";
+import { useRouter } from "next/router";
 
 interface ISignInInputs {
   email: string;
@@ -8,11 +11,17 @@ interface ISignInInputs {
 }
 
 export default function SignInPage() {
+  const router = useRouter();
   const dispatch = useAppDispatch();
   const { register, handleSubmit, watch, formState: { errors } } = useForm<ISignInInputs>();
 
-  const onSubmit: SubmitHandler<ISignInInputs> = async (data) => {
-    console.log("Sign in page", data);
+  const onSubmit: SubmitHandler<ISignInInputs> = async (body) => {
+    const { data } = await dispatch(signIn({ email: body.email, password: body.password })).unwrap();
+
+    if (data.token) {
+      dispatch(loginSuccess({ ...data.user, token: data.token }));
+      router.push("/shop");
+    }
   };
 
   return (

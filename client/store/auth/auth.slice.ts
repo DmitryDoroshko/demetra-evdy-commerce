@@ -5,6 +5,7 @@ interface IUser {
   email: string;
   password: string;
   role: "admin" | "user" | undefined;
+  token: string | null;
 }
 
 interface IAuthState {
@@ -56,6 +57,15 @@ const authSlice = createSlice({
   },
 });
 
-export const { setUserName, setEmail, setPassword, setRepeatPassword, resetAuth, setAuthData } = authSlice.actions;
+export const {
+  setUserName,
+  setEmail,
+  setPassword,
+  setRepeatPassword,
+  resetAuth,
+  setAuthData,
+  loginSuccess,
+  logoutSuccess,
+} = authSlice.actions;
 
 export default authSlice.reducer;

@@ -2,15 +2,16 @@ import { useEffect } from "react";
 
 import { Newsletter } from "@/components/shared/Newsletter/Newsletter";
 import { MainSlider } from "@/components/slider/MainSlider/MainSlider";
-import products from "@/data/shop-items.json";
 import { Product } from "@/components/shared/Product/Product";
 import { fetchAllProducts } from "@/store/products/products.actions";
-import { useAppDispatch } from "@/hooks/redux-hooks";
+import { useAppDispatch, useAppSelector } from "@/hooks/redux-hooks";
+import { selectProductItems } from "@/store/products/products.selectors";
 
 const LIMIT_FOR_PRODUCTS_MAPPED = 8;
 
 export default function Home() {
   const dispatch = useAppDispatch();
+  const products = useAppSelector(selectProductItems);
 
   useEffect(() => {
     dispatch(fetchAllProducts());
@@ -72,7 +73,7 @@ export default function Home() {
 
             <main className="our-products__items">
               {
-                products.items.slice(0, LIMIT_FOR_PRODUCTS_MAPPED).map(item => {
+                products.slice(0, LIMIT_FOR_PRODUCTS_MAPPED).map(item => {
                   return <Product key={item.id} image={item.image} imageAlternativeText={item.name} brand={item.brand}
                                   name={item.name} price={item.price} id={item.id} />;
                 })
