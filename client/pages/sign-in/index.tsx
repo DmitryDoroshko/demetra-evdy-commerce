@@ -20,7 +20,7 @@ export default function SignInPage() {
 
     if (data.token) {
       dispatch(loginSuccess({ ...data.user, token: data.token }));
-      router.push("/shop");
+      await router.push("/shop");
     }
   };
 
