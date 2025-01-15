@@ -5,26 +5,29 @@ interface IDropdownProps {
   isDropdownActive: boolean;
   linkHref: string;
   className?: string;
+  items?: string[];
 }
 
-export function HeaderDropdown({
-  title,
-  isDropdownActive,
-  linkHref,
-  className,
-}: IDropdownProps) {
+export function HeaderDropdown(
+  {
+    title,
+    isDropdownActive,
+    linkHref,
+    className,
+    items,
+  }: IDropdownProps) {
   return (
     <li className={`dropdown ${className}`}>
       <div className={`dropdown__head ${isDropdownActive ? "active" : ""}`}>
         <Link href={linkHref} className={`dropdown__head-link`}>
           {title}
         </Link>
-        <span className="dropdown__head-icon"></span>
+        {items && items.length > 0 &&
+          <span className="dropdown__head-icon"></span>
+        }
       </div>
       <div className="dropdown__content-items">
-        <button className="dropdown__content-item">Placeholder 1</button>
-        <button className="dropdown__content-item">Placeholder 2</button>
-        <button className="dropdown__content-item">Placeholder 3</button>
+        {(items || []).map((item) => (<button className="dropdown__content-item" key={item}>{item}</button>))}
       </div>
     </li>
   );
