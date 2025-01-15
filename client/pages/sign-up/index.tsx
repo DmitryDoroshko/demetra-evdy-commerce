@@ -1,7 +1,10 @@
-import { SubmitHandler, useForm } from "react-hook-form";
-import { useAppDispatch } from "@/hooks/redux-hooks";
 import Link from "next/link";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { useRouter } from "next/router";
+
+import { useAppDispatch } from "@/hooks/redux-hooks";
 import { signUp } from "@/store/auth/auth.actions";
+import notification from "@/helpers/utils";
 
 interface ISignUpInputs {
   username: string;
@@ -11,11 +14,23 @@ interface ISignUpInputs {
 }
 
 export default function SignUpPage() {
+  const router = useRouter();
   const dispatch = useAppDispatch();
   const { register, handleSubmit, watch, formState: { errors } } = useForm<ISignUpInputs>();
 
   const onSubmit: SubmitHandler<ISignUpInputs> = async (data) => {
-    dispatch(signUp({ email: data.email, password: data.password, username: data.username }));
+    const { success } = await dispatch(signUp({
+      email: data.email,
+      password: data.password,
+      username: data.username,
+    })).unwrap();
+
+    if (success) {
+      notification("Successfully signed up!", "success");
+      await router.push("/sign-in");
+    } else {
+      notification("Error signing up...", "error");
+    }
   };
 
   return (
