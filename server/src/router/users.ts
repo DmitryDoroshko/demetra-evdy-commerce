@@ -8,6 +8,7 @@ import ResponseHelper from "../helpers/responseHelper";
 import { IUser, IUserLogin } from "../types/User";
 import { authorize } from "../middleware/auth";
 import Token from "../models/token";
+import { JWT_EXPIRATION_TIME } from "../helpers/constants";
 
 const router = Router();
 
@@ -100,7 +101,10 @@ export const signIn = async (req: Request, res: Response) => {
       });
     }
 
-    const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET as string);
+    const token = jwt.sign({
+      id: user._id,
+      role: user.role,
+    }, process.env.JWT_SECRET as string, { expiresIn: JWT_EXPIRATION_TIME });
 
     return ResponseHelper.response({
       res,
@@ -110,7 +114,10 @@ export const signIn = async (req: Request, res: Response) => {
       data: {
         token,
         user: {
-          name: user.username, role: user.role,
+          id: user._id,
+          name: user.username,
+          email: user.email,
+          role: user.role,
         },
       },
     });
