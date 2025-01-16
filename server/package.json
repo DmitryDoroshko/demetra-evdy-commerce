@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
+    "seed": "env-cmd -f ./config/dev.env ts-node ./src/scripts/seed.ts",
     "dev": "env-cmd -f ./config/dev.env nodemon ./src/app.ts",
     "start": "env-cmd -f ./config/prod.env node ./dist/app.js",
     "test": "env-cmd -f ./config/test.env jest --watch --runInBand"
@@ -15,6 +16,7 @@
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
     "express": "5.0.0",
     "express-validator": "^7.0.1",
     "jsonwebtoken": "^9.0.2",
