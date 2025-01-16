@@ -12,7 +12,7 @@ export const fetchAllProducts = createAsyncThunk(
     } catch (error) {
       throw error;
     }
-  }
+  },
 );
 
 // TODO: Create logic for fetchSingleProductById
@@ -26,5 +26,5 @@ export const fetchSingleProductById = createAsyncThunk(
     } catch (error) {
       throw error;
     }
-  }
+  },
 );
