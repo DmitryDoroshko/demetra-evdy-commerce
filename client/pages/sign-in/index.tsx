@@ -4,8 +4,9 @@ import { SubmitHandler, useForm } from "react-hook-form";
 
 import { useAppDispatch } from "@/hooks/redux-hooks";
 import { signIn } from "@/store/auth/auth.actions";
-import { loginSuccess } from "@/store/auth/auth.slice";
-import notification from "@/helpers/utils";
+import { signInSuccess } from "@/store/auth/auth.slice";
+import { notification }from "@/helpers/utils";
+import { TOKEN_LOCAL_STORAGE_KEY } from "@/constants/constants";
 
 interface ISignInInputs {
   email: string;
@@ -21,7 +22,8 @@ export default function SignInPage() {
     const { data } = await dispatch(signIn({ email: body.email, password: body.password })).unwrap();
 
     if (data.token) {
-      dispatch(loginSuccess({ ...data.user, token: data.token }));
+      dispatch(signInSuccess({ ...data.user, token: data.token }));
+      localStorage.setItem(TOKEN_LOCAL_STORAGE_KEY, data.token);
       notification("Successfully signed in!", "success");
       await router.push("/shop");
     }
