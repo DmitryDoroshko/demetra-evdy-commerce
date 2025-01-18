@@ -8,7 +8,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-x: scroll;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      overflow-x: scroll;
+    }
   }
 
   &__table {
