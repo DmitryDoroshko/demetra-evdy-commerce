@@ -17,6 +17,7 @@ import {
 } from "@/store/products/products.selectors";
 import { selectCartItems } from "@/store/shopping-cart/shopping-cart.selectors";
 import { isProductInShoppingCart } from "@/helpers/shopping-cart";
+import { notification } from "@/helpers/utils";
 
 const LIMIT_FOR_PRODUCTS_MAPPED = 4;
 
@@ -52,10 +53,12 @@ export default function ProductPage() {
       // TODO: Fix this warning
       // @ts-ignore
       dispatch(addItemToCart({ item: currentProduct, count: 1 }));
+      notification("Item added to cart!", "success");
       return;
     }
 
     dispatch(removeItemFromCartByItsIdCompletely({ id: currentProduct.id }));
+    notification("Item removed from cart!", "info");
   };
 
   const renderedProducts = products?.slice(0, LIMIT_FOR_PRODUCTS_MAPPED).map((item) => {

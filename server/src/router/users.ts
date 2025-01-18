@@ -8,11 +8,24 @@ import ResponseHelper from "../helpers/responseHelper";
 import { IUser, IUserLogin } from "../types/User";
 import { authorize } from "../middleware/auth";
 import Token from "../models/token";
+import { JWT_EXPIRATION_TIME } from "../helpers/constants";
 
 const router = Router();
 
 export const signUp = async (req: Request, res: Response) => {
   const { username, email, password, role }: IUser = req.body;
+
+  const emailAlreadyExists = await User.findOne({ email: email });
+
+  if (emailAlreadyExists) {
+    return ResponseHelper.response({
+      res,
+      code: 400,
+      success: false,
+      message: "Email already in use.",
+      data: {},
+    });
+  }
 
   try {
     const errors = validationResult(req);
@@ -88,7 +101,10 @@ export const signIn = async (req: Request, res: Response) => {
       });
     }
 
-    const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET as string);
+    const token = jwt.sign({
+      id: user._id,
+      role: user.role,
+    }, process.env.JWT_SECRET as string, { expiresIn: JWT_EXPIRATION_TIME });
 
     return ResponseHelper.response({
       res,
@@ -98,12 +114,14 @@ export const signIn = async (req: Request, res: Response) => {
       data: {
         token,
         user: {
-          name: user.username, role: user.role,
+          id: user._id,
+          name: user.username,
+          email: user.email,
+          role: user.role,
         },
       },
     });
-  }
-  catch (error) {
+  } catch (error) {
     return ResponseHelper.error({ res, err: error });
   }
 };
@@ -137,13 +155,13 @@ export const getUser = async (req: Request, res: Response) => {
 
 export const signOut = async (req: Request, res: Response) => {
   try {
-    const token = req.headers.authorization?.split(' ')[1];
+    const token = req.headers.authorization?.split(" ")[1];
     if (!token) {
       return ResponseHelper.response({
         res,
         code: 400,
         success: false,
-        message: 'Token is required',
+        message: "Token is required",
         data: {},
       });
     }
@@ -155,7 +173,7 @@ export const signOut = async (req: Request, res: Response) => {
       res,
       code: 200,
       success: true,
-      message: 'Successfully signed out!',
+      message: "Successfully signed out!",
       data: {},
     });
   } catch (error) {

@@ -14,7 +14,7 @@ class ProductsService {
   async getAllProducts(): Promise<IProduct[]> {
     try {
       const response = await http.get("/products");
-      return response.data.data.items;
+      return response.data.data;
     } catch (error) {
       console.log("Error fetching all products", error);
       throw error;

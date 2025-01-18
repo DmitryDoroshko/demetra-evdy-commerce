@@ -1,61 +1,46 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { jwtDecode } from "jwt-decode";
 
 interface IUser {
-  username: string;
+  id: string;
+  name: string;
   email: string;
-  password: string;
   role: "admin" | "user" | undefined;
 }
 
 interface IAuthState {
-  username: string;
-  email: string;
-  password: string;
-  repeatPassword: string;
   user: IUser | null;
-  isAuthenticated: boolean;
+  token: string | null;
 }
 
 const initialState: IAuthState = {
-  username: "",
-  email: "",
-  password: "",
-  repeatPassword: "",
   user: null,
-  isAuthenticated: false,
+  token: null,
 };
 
 const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    setUserName: (state, action: PayloadAction<string>) => {
-      state.username = action.payload;
+    signInSuccess: (state, action: PayloadAction<{ user: IUser, token: string }>) => {
+      state.user = action.payload.user;
+      state.token = action.payload.token;
     },
-    setEmail: (state, action: PayloadAction<string>) => {
-      state.email = action.payload;
-    },
-    setPassword: (state, action: PayloadAction<string>) => {
-      state.password = action.payload;
-    },
-    setRepeatPassword: (state, action: PayloadAction<string>) => {
-      state.repeatPassword = action.payload;
-    },
-    setAuthData: (state, action: PayloadAction<IAuthState>) => {
-      state = action.payload;
-    },
-    resetAuth: () => initialState,
-    loginSuccess: (state, action: PayloadAction<IUser>) => {
-      state.user = action.payload;
-      state.isAuthenticated = true;
-    },
-    logoutSuccess: (state) => {
+    signOutSuccess: (state) => {
       state.user = null;
-      state.isAuthenticated = false;
+      state.token = null;
+    },
+    setToken(state, action: PayloadAction<string>) {
+      state.token = action.payload;
+      state.user = jwtDecode(action.payload);
     },
   },
 });
 
-export const { setUserName, setEmail, setPassword, setRepeatPassword, resetAuth, setAuthData } = authSlice.actions;
+export const {
+  signInSuccess,
+  signOutSuccess,
+  setToken,
+} = authSlice.actions;
 
 export default authSlice.reducer;

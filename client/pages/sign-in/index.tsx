@@ -1,6 +1,12 @@
-import { useForm, SubmitHandler } from "react-hook-form";
-import { useAppDispatch } from "@/hooks/redux-hooks";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { SubmitHandler, useForm } from "react-hook-form";
+
+import { useAppDispatch } from "@/hooks/redux-hooks";
+import { signIn } from "@/store/auth/auth.actions";
+import { signInSuccess } from "@/store/auth/auth.slice";
+import { notification }from "@/helpers/utils";
+import { TOKEN_LOCAL_STORAGE_KEY } from "@/constants/constants";
 
 interface ISignInInputs {
   email: string;
@@ -8,11 +14,19 @@ interface ISignInInputs {
 }
 
 export default function SignInPage() {
+  const router = useRouter();
   const dispatch = useAppDispatch();
-  const { register, handleSubmit, watch, formState: { errors } } = useForm<ISignInInputs>();
+  const { register, handleSubmit, formState: { errors } } = useForm<ISignInInputs>();
 
-  const onSubmit: SubmitHandler<ISignInInputs> = async (data) => {
-    console.log("Sign in page", data);
+  const onSubmit: SubmitHandler<ISignInInputs> = async (body) => {
+    const { data } = await dispatch(signIn({ email: body.email, password: body.password })).unwrap();
+
+    if (data.token) {
+      dispatch(signInSuccess({ ...data.user, token: data.token }));
+      localStorage.setItem(TOKEN_LOCAL_STORAGE_KEY, data.token);
+      notification("Successfully signed in!", "success");
+      await router.push("/shop");
+    }
   };
 
   return (

@@ -1,66 +1,32 @@
 import { Request, Response, Router } from "express";
-import fs from "fs";
-import path from "path";
 
 import ResponseHelper from "../helpers/responseHelper";
-import { IProduct } from "../models/product";
+import { Product } from "../models/product";
 
 const router = Router();
 
-const getProducts = (req: Request, res: Response) => {
-  const filePath = path.join(__dirname, "..", "data", "shop-items.json");
-
-  fs.readFile(filePath, "utf-8", (err, data) => {
-
-    if (err) {
-      console.error("Error reading JSON file:", err);
-      return ResponseHelper.error({ res, err: "Error reading JSON file" });
-    }
-
-    try {
-      const products = JSON.parse(data);
-
-      return ResponseHelper.response({
-          res,
-          code: 200,
-          success: true,
-          message: "Successfully fetched products",
-          data: products,
-        },
-      );
-    } catch (parseError) {
-      return ResponseHelper.error({ res, err: "Error parsing JSON file" });
-    }
-  });
+const getProducts = async (req: Request, res: Response) => {
+  try {
+    const products = await Product.find(); // Fetch all products
+    return ResponseHelper.response({
+      res,
+      code: 200,
+      success: true,
+      message: "Successfully fetched products",
+      data: products,
+    });
+  } catch (err) {
+    console.error("Error fetching products:", err);
+    return ResponseHelper.error({ res, err: "Error fetching products" });
+  }
 };
 
-const getSingleProduct = (req: Request, res: Response) => {
-  const productId = req.params.productId;
-  const filePath = path.join(__dirname, "..", "data", "shop-items.json");
+const getSingleProduct = async (req: Request, res: Response) => {
+  const { productId } = req.params;
 
-  fs.readFile(filePath, "utf-8", (err, data) => {
-    if (err) {
-      console.error("Error reading JSON file:", err);
-      return ResponseHelper.error({ res, err: "Error reading JSON file" });
-    }
-
-    try {
-      const { items: products } = JSON.parse(data);
-      const singleProductFromProductsArray = products.find((product: IProduct) => product.id === productId);
-
-      console.log({ singleProductFromProductsArray });
-
-      if (singleProductFromProductsArray != null) {
-        return ResponseHelper.response({
-            res,
-            code: 200,
-            success: true,
-            message: `Successfully fetched product with id ${productId}`,
-            data: singleProductFromProductsArray,
-          },
-        );
-      }
-
+  try {
+    const product = await Product.findOne({ id: productId }); // Fetch product by ID
+    if (!product) {
       return ResponseHelper.response({
         res,
         code: 404,
@@ -68,10 +34,19 @@ const getSingleProduct = (req: Request, res: Response) => {
         message: `Product with id (${productId}) not found`,
         data: {},
       });
-    } catch (parseError) {
-      return ResponseHelper.error({ res, err: "Error parsing JSON file" });
     }
-  });
+
+    return ResponseHelper.response({
+      res,
+      code: 200,
+      success: true,
+      message: `Successfully fetched product with id ${productId}`,
+      data: product,
+    });
+  } catch (err) {
+    console.error("Error fetching product:", err);
+    return ResponseHelper.error({ res, err: "Error fetching product" });
+  }
 };
 
 router.get("/:productId", getSingleProduct);
