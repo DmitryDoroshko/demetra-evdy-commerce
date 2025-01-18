@@ -44,6 +44,11 @@ export function Header() {
                 />
 
                 <HeaderDropdown
+                  title={"Article"}
+                  isDropdownActive={pathname === "/article"}
+                  linkHref={"/article"} />
+
+                <HeaderDropdown
                   title={"Contact Us"}
                   isDropdownActive={pathname === "/contact-us"}
                   linkHref={"/contact-us"} />
