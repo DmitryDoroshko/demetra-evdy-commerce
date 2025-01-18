@@ -24,12 +24,12 @@ export function Footer() {
               </div>
 
               <div className="footer__links">
-                <a href="#" className="footer__link">
+                <Link href="/about-us" className="footer__link">
                   About Evdy Commerce
-                </a>
-                <a href="#" className="footer__link">
+                </Link>
+                <Link href="/faq" className="footer__link">
                   FAQ
-                </a>
+                </Link>
                 <Link href="/contact-us" className="footer__link">
                   Contact us
                 </Link>
