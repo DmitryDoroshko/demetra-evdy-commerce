@@ -42,11 +42,11 @@ export function Header() {
                   title={"Blog"}
                   isDropdownActive={pathname === "/blog"}
                 />
-                <li className="header__dropdown">
-                  <Link href="/page" className="header__link">
-                    Page
-                  </Link>
-                </li>
+
+                <HeaderDropdown
+                  title={"Contact Us"}
+                  isDropdownActive={pathname === "/contact-us"}
+                  linkHref={"/contact-us"} />
               </ul>
             </nav>
 
@@ -232,39 +232,39 @@ export function Header() {
             <nav className="header__dropdowns header__dropdowns--mobile">
               <ul className="header__dropdown-list header__dropdown-list--mobile">
                 <li className="header__dropdown header__dropdown--mobile active">
-                  <a
+                  <Link
                     href="/"
                     className="header__link header__link--mobile active"
                   >
                     Home
-                  </a>
+                  </Link>
                   <span className="header__drop-icon header__drop-icon--mobile"></span>
                 </li>
                 <li className="header__dropdown header__dropdown--mobile">
-                  <a href="/shop" className="header__link header__link--mobile">
+                  <Link href="/shop" className="header__link header__link--mobile">
                     Shop
-                  </a>
+                  </Link>
                   <span className="header__drop-icon header__drop-icon--mobile"></span>
                 </li>
                 <li className="header__dropdown header__dropdown--mobile">
-                  <a
+                  <Link
                     href="/product"
                     className="header__link header__link--mobile"
                   >
                     Product
-                  </a>
+                  </Link>
                   <span className="header__drop-icon header__drop-icon--mobile"></span>
                 </li>
                 <li className="header__dropdown header__dropdown--mobile">
-                  <a href="/blog" className="header__link header__link--mobile">
+                  <Link href="/blog" className="header__link header__link--mobile">
                     Blog
-                  </a>
+                  </Link>
                   <span className="header__drop-icon header__drop-icon--mobile"></span>
                 </li>
                 <li className="header__dropdown header__dropdown--mobile">
-                  <a href="#" className="header__link header__link--mobile">
-                    Page
-                  </a>
+                  <Link href="#" className="header__link header__link--mobile">
+                    Contact Us
+                  </Link>
                 </li>
               </ul>
             </nav>

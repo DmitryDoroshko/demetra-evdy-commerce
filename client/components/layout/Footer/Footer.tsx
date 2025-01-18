@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function Footer() {
   return (
     <footer className="footer">
@@ -28,9 +30,9 @@ export function Footer() {
                 <a href="#" className="footer__link">
                   FAQ
                 </a>
-                <a href="#" className="footer__link">
+                <Link href="/contact-us" className="footer__link">
                   Contact us
-                </a>
+                </Link>
               </div>
             </div>
 
