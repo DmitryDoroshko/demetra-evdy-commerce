@@ -42,15 +42,15 @@ export function Footer() {
               </div>
 
               <div className="footer__links">
-                <a href="#" className="footer__link">
+                <Link href="/wishlist" className="footer__link">
                   Wishlist
-                </a>
-                <a href="#" className="footer__link">
+                </Link>
+                <Link href="/checkout" className="footer__link">
                   Checkout
-                </a>
-                <a href="#" className="footer__link">
+                </Link>
+                <Link href="/shopping-cart" className="footer__link">
                   Cart
-                </a>
+                </Link>
               </div>
             </div>
 
