@@ -53,9 +53,9 @@ export function CartTotals({
         </div>
 
         <div className="shopping-cart-full__content-right-actions">
-          <button className="shopping-cart-full__proceed-to-checkout-btn btn btn--grey">
+          <Link href={"/checkout"} className="shopping-cart-full__proceed-to-checkout-btn btn btn--grey">
             Proceed to checkout
-          </button>
+          </Link>
           <Link
             href={"/shop"}
             className="shopping-cart-full__continue-shopping-btn btn btn--transparent-red"
