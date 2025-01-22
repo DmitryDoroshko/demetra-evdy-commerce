@@ -136,7 +136,7 @@ export function Header() {
               </li>
 
               <li className="header__action">
-                <button className="header__btn">
+                <Link className="header__btn" href={"/wishlist"}>
                   <svg
                     className="header__icon"
                     stroke="black"
@@ -157,7 +157,7 @@ export function Header() {
                       />
                     </g>
                   </svg>
-                </button>
+                </Link>
               </li>
 
               <li className="header__action">
