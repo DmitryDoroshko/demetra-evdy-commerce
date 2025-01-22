@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function Footer() {
   return (
     <footer className="footer">
@@ -22,15 +24,15 @@ export function Footer() {
               </div>
 
               <div className="footer__links">
-                <a href="#" className="footer__link">
+                <Link href="/about-us" className="footer__link">
                   About Evdy Commerce
-                </a>
-                <a href="#" className="footer__link">
+                </Link>
+                <Link href="/faq" className="footer__link">
                   FAQ
-                </a>
-                <a href="#" className="footer__link">
+                </Link>
+                <Link href="/contact-us" className="footer__link">
                   Contact us
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -40,15 +42,15 @@ export function Footer() {
               </div>
 
               <div className="footer__links">
-                <a href="#" className="footer__link">
+                <Link href="/wishlist" className="footer__link">
                   Wishlist
-                </a>
-                <a href="#" className="footer__link">
+                </Link>
+                <Link href="/checkout" className="footer__link">
                   Checkout
-                </a>
-                <a href="#" className="footer__link">
+                </Link>
+                <Link href="/shopping-cart" className="footer__link">
                   Cart
-                </a>
+                </Link>
               </div>
             </div>
 

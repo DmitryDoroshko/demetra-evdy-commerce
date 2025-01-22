@@ -16,8 +16,6 @@ Get products from DB and not from a local file.
 
 Add docker support.
 
-Sign up vs sign in pages.
-
 Make footer at the bottom of page and make it stick there.
 
 Validate the form for sign-up / sign-in. Use something like 'zod'.
