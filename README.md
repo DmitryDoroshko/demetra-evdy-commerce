@@ -15,6 +15,7 @@ JWT_SECRET=
 
 4. npm run seed
 5. npm run dev
+```
 
 ![image](https://github.com/user-attachments/assets/970cb12a-514a-4b81-9a74-242c3cc0b99c)
 
