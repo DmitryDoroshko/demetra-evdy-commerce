@@ -1,12 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { jwtDecode } from "jwt-decode";
-
-interface IUser {
-  id: string;
-  name: string;
-  email: string;
-  role: "admin" | "user" | undefined;
-}
+import { IUser } from "@/model/types";
+import { decodeToken } from "@/helpers/utils";
 
 interface IAuthState {
   user: IUser | null;
@@ -32,7 +26,7 @@ const authSlice = createSlice({
     },
     setToken(state, action: PayloadAction<string>) {
       state.token = action.payload;
-      state.user = jwtDecode(action.payload);
+      state.user = decodeToken(action.payload);
     },
   },
 });
