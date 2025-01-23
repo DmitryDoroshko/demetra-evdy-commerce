@@ -23,6 +23,7 @@ const ProductSchema: Schema = new Schema({
   imageAltText: { type: String, required: true },
   image: { type: String, required: true },
   description: { type: String, required: true },
+  inStock: { type: Boolean, required: true },
 });
 
 export const Product = mongoose.model<IProduct>("Product", ProductSchema);
