@@ -27,7 +27,7 @@ const shoppingCartSlice = createSlice({
   reducers: {
     addItemToCart(
       state,
-      { payload }: PayloadAction<{ item: ICartItem; count: number }>,
+      { payload }: PayloadAction<{ item: ICartItem | null; count: number }>,
     ) {
       const { item, count } = payload;
 

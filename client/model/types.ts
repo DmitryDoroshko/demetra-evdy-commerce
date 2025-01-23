@@ -12,3 +12,21 @@ export interface ICartItem extends IProduct {
   description: string;
   amountOfMoneyForItems: number;
 }
+
+export interface IWishlistItem extends IProduct {
+  inStock: boolean;
+}
+
+export interface IWishlistOrCartItem extends IProduct {
+  inStock?: boolean;
+  itemCount?: number;
+  description?: string;
+  amountOfMoneyForItems?: number;
+}
+
+export interface IUser {
+  id: string;
+  name: string;
+  email: string;
+  role: "admin" | "user" | undefined;
+}

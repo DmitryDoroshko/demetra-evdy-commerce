@@ -5,19 +5,20 @@ import {
   removeItemFromCartByItsIdCompletely,
 } from "@/store/shopping-cart/shopping-cart.slice";
 
-export function ShoeItem({
-                           id,
-                           amountOfMoneyForItems,
-                           itemCount,
-                           pictureSrc,
-                           name,
-                         }: {
-  id: string;
-  amountOfMoneyForItems: number;
-  itemCount: number;
-  pictureSrc: string;
-  name: string;
-}) {
+export function ShoeItem(
+  {
+    id,
+    amountOfMoneyForItems,
+    itemCount,
+    pictureSrc,
+    name,
+  }: {
+    id: string;
+    amountOfMoneyForItems: number;
+    itemCount: number;
+    pictureSrc: string;
+    name: string;
+  }) {
   const dispatch = useAppDispatch();
 
   const removeItemFromCartHandler = () => {
