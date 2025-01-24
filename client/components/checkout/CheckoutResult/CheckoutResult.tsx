@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function CheckoutResult() {
   return (
     <section className="checkout-empty">
@@ -12,7 +14,7 @@ export function CheckoutResult() {
       <div className="checkout-empty__actions">
         <div className="container">
           <div className="checkout-empty__actions-inner">
-            <button className="btn btn--grey checkout-empty__go-to-shop-btn">Go to shop</button>
+            <Link href={"/shop"} className="btn btn--grey checkout-empty__go-to-shop-btn">Go to shop</Link>
           </div>
         </div>
       </div>
