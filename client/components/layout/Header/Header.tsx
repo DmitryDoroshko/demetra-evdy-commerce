@@ -57,7 +57,7 @@ export function Header() {
 
             <ul className="header__actions">
               <li className="header__action">
-                <button className="header__btn">
+                <Link href={"/shop"} className="header__btn">
                   <svg
                     className="header__icon"
                     width="24"
@@ -117,7 +117,7 @@ export function Header() {
                       </clipPath>
                     </defs>
                   </svg>
-                </button>
+                </Link>
               </li>
 
               <li className="header__action">
