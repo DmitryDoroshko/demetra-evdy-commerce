@@ -4,7 +4,6 @@ import { addItemToCart, removeItemFromCartByItsIdCompletely } from "@/store/shop
 import { createSelectProductFromWishlist } from "@/store/wishlist/wishlist.selectors";
 import { isProductInShoppingCart } from "@/helpers/products";
 import { selectCartItems } from "@/store/shopping-cart/shopping-cart.selectors";
-import { is } from "immutable";
 import { notification } from "@/helpers/utils";
 
 export function WishlistItem(
