@@ -1,7 +1,7 @@
 import http from "../http-common";
 import { ISignInBody, ISignUpBody } from "@/service/auth/auth.types";
 import { AxiosError } from "axios";
-import notification from "@/helpers/utils";
+import { notification } from "@/helpers/utils";
 
 class AuthService {
   private static instance: AuthService;

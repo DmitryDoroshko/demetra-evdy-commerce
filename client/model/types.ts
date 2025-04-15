@@ -30,3 +30,22 @@ export interface IUser {
   email: string;
   role: "admin" | "user" | undefined;
 }
+
+enum TransferOptionEnum {
+  directBankTransfer = "directBankTransfer",
+  checkPayment = "checkPayment",
+  cashOnDelivery = "cashOnDelivery",
+}
+
+export interface IUserOrderDetails extends IUser {
+  name: string;
+  surname: string;
+  country: string;
+  city: string;
+  address: string;
+  email: string;
+  zipcode: string;
+  transferOption: TransferOptionEnum;
+  companyName?: string;
+  phoneNumber?: string;
+}

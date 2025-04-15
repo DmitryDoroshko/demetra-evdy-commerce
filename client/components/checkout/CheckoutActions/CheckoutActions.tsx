@@ -6,6 +6,8 @@ import {
   selectTotalPriceForAllItems,
 } from "@/store/shopping-cart/shopping-cart.selectors";
 import { RootState } from "@/store";
+import { checkoutService } from "@/service/checkout/checkout-service";
+import { notification } from "@/helpers/utils";
 
 enum TransferOptionEnum {
   directBankTransfer = "directBankTransfer",
@@ -31,6 +33,7 @@ export function CheckoutActions({ onSuccess }: { onSuccess: () => void; }) {
   const subtotals = useAppSelector((state: RootState) => state.shoppingCart.subtotalPriceForAllItems);
   const shippingFlatRate = useAppSelector(selectShippingFlatRate);
   const totalPriceForAllItems = useAppSelector(selectTotalPriceForAllItems);
+  const user = useAppSelector(state => state.auth.user);
   const { register, handleSubmit, formState: { errors } } = useForm<CheckoutFormInputs>();
 
   const renderedCartItemsSummaries = cartItems.map(item => (
@@ -40,9 +43,18 @@ export function CheckoutActions({ onSuccess }: { onSuccess: () => void; }) {
     </div>
   ));
 
-  const onSubmit: SubmitHandler<CheckoutFormInputs> = (data) => {
-    console.log(data);
-    onSuccess();
+  const onSubmit: SubmitHandler<CheckoutFormInputs> = async (userInfo) => {
+    if (!user) {
+      notification("User needs to be logged in.", "warning");
+      return;
+    }
+
+    try {
+      await checkoutService.createOrder({ items: cartItems, userId: user.id, userInfo: userInfo });
+      onSuccess();
+    } catch (error) {
+      notification("Error occurred...", "error");
+    }
   };
 
   return (

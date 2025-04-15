@@ -12,9 +12,12 @@ export default function CheckoutPage() {
 
   return (
     <>
-      <MainSecondary image={"/assets/img/main-secondary/checkout.png"} imageAlternativeText={"Checkout picture"}
-                     subtitle={"Home / Checkout"} title={"Checkout"} />
-      {!checkoutSuccess ? <CheckoutActions onSuccess={handleCheckoutSuccess}/> : <CheckoutResult />}
+      <MainSecondary
+        image={"/assets/img/main-secondary/checkout.png"}
+        imageAlternativeText={"Checkout picture"}
+        subtitle={"Home / Checkout"}
+        title={"Checkout"} />
+      {!checkoutSuccess ? <CheckoutActions onSuccess={handleCheckoutSuccess} /> : <CheckoutResult />}
     </>
   );
 }

@@ -12,7 +12,7 @@ export interface IProduct extends Document {
 
 export interface ICartItem extends IProduct {
   itemCount?: number;
-  description: string;
+  amountOfMoneyForItems: number;
 }
 
 const ProductSchema: Schema = new Schema({

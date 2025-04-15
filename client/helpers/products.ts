@@ -1,4 +1,4 @@
-import { ICartItem, IProduct, IWishlistItem, IWishlistOrCartItem } from "@/model/types";
+import { IProduct, IWishlistOrCartItem } from "@/model/types";
 
 export function isProductInShoppingCart(
   cartItems: IWishlistOrCartItem[],
