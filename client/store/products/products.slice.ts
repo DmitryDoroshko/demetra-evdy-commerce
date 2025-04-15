@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IProduct } from "@/model/types";
+import { IProduct, IWishlistItem } from "@/model/types";
 import {
   fetchAllProducts,
   fetchSingleProductById,
@@ -9,7 +9,7 @@ export interface IProductsState {
   productItems: IProduct[];
   productItemsLoading: boolean;
   productItemsLoadError: string | null;
-  currentProduct: IProduct | null;
+  currentProduct: IProduct | IWishlistItem | null;
   currentProductLoading: boolean;
   currentProductLoadError: null | string;
 }

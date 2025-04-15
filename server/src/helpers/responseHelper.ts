@@ -12,7 +12,7 @@ export default class ResponseHelper {
     return res.status(code).json({ success, message, data });
   }
 
-  static error({ res, err }: { res: Response, err: any }) {
-    return res.status(400).json({ err });
+  static error({ res, err, status = 400 }: { res: Response, err: any, status?: number }) {
+    return res.status(status).json({ err });
   }
 }

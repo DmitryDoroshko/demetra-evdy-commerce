@@ -4,100 +4,111 @@
       "id": "p1",
       "brand": "Jordan",
       "name": "AIR JORDAN 1 MID",
-      "price": 120,
+      "price": 100,
       "imageAltText": "AIR JORDAN 1 MID",
       "image": "/assets/img/our-products/1.png",
-      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "inStock": true
     },
     {
       "id": "p2",
       "brand": "Nike",
-      "name": "AIR JORDAN 1 MID",
+      "name": "AIR JORDAN 7 MID",
       "price": 121,
       "imageAltText": "AIR JORDAN 1 MID",
       "image": "/assets/img/our-products/2.png",
-      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "inStock": true
     },
     {
       "id": "p3",
       "brand": "Nike",
-      "name": "AIR JORDAN 1 MID",
+      "name": "AIR JORDAN 4 MID",
       "price": 122,
       "imageAltText": "AIR JORDAN 1 MID",
       "image": "/assets/img/our-products/3.png",
-      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "inStock": true
     },
     {
       "id": "p4",
       "brand": "Jordan",
-      "name": "AIR JORDAN 1 MID",
-      "price": 120,
+      "name": "AIR JORDAN 2 MID",
+      "price": 201,
       "imageAltText": "AIR JORDAN 1 MID",
       "image": "/assets/img/our-products/4.png",
-      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "inStock": false
     },
     {
       "id": "p5",
       "brand": "Jordan",
-      "name": "AIR JORDAN 1 MID",
-      "price": 120,
+      "name": "AIR JORDAN 3 MID",
+      "price": 199,
       "imageAltText": "AIR JORDAN 1 MID",
       "image": "/assets/img/our-products/5.png",
-      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "inStock": false
     },
     {
       "id": "p6",
-      "brand": "Jordan",
-      "name": "AIR JORDAN 1 MID",
+      "brand": "Nike",
+      "name": "AIR JORDAN 6 MID",
       "price": 120,
       "imageAltText": "AIR JORDAN 1 MID",
       "image": "/assets/img/our-products/6.png",
-      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "inStock": true
     },
     {
       "id": "p7",
-      "brand": "Jordan",
-      "name": "AIR JORDAN 1 MID",
+      "brand": "Adidas",
+      "name": "Adidas AIR JORDAN",
       "price": 120,
       "imageAltText": "AIR JORDAN 1 MID",
       "image": "/assets/img/our-products/7.png",
-      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "inStock": true
     },
     {
       "id": "p8",
-      "brand": "Jordan",
+      "brand": "Adidas",
       "name": "AIR JORDAN 1 MID",
-      "price": 120,
+      "price": 107,
       "imageAltText": "AIR JORDAN 1 MID",
       "image": "/assets/img/our-products/8.png",
-      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "inStock": true
     },
     {
       "id": "p9",
       "brand": "Jordan",
       "name": "AIR JORDAN 1 MID",
-      "price": 120,
+      "price": 105,
       "imageAltText": "AIR JORDAN 1 MID",
       "image": "/assets/img/our-products/9.png",
-      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "inStock": false
     },
     {
       "id": "p10",
       "brand": "Jordan",
-      "name": "AIR JORDAN 1 MID",
-      "price": 120,
+      "name": "Nike AIR JORDAN 1 MID",
+      "price": 90,
       "imageAltText": "AIR JORDAN 1 MID",
       "image": "/assets/img/our-products/10.png",
-      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "inStock": true
     },
     {
       "id": "p11",
-      "brand": "Jordan",
+      "brand": "Adidas",
       "name": "AIR JORDAN 1 MID",
-      "price": 120,
+      "price": 130,
       "imageAltText": "AIR JORDAN 1 MID",
       "image": "/assets/img/our-products/11.png",
-      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "inStock": true
     },
     {
       "id": "p12",
@@ -106,7 +117,8 @@
       "price": 120,
       "imageAltText": "AIR JORDAN 1 MID",
       "image": "/assets/img/our-products/12.png",
-      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "inStock": false
     },
     {
       "id": "p13",
@@ -115,7 +127,8 @@
       "price": 120,
       "imageAltText": "AIR JORDAN 1 MID",
       "image": "/assets/img/our-products/13.png",
-      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "inStock": true
     },
     {
       "id": "p14",
@@ -124,7 +137,8 @@
       "price": 120,
       "imageAltText": "AIR JORDAN 1 MID",
       "image": "/assets/img/our-products/14.png",
-      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "inStock": true
     },
     {
       "id": "p15",
@@ -133,16 +147,18 @@
       "price": 120,
       "imageAltText": "AIR JORDAN 1 MID",
       "image": "/assets/img/our-products/15.png",
-      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "inStock": true
     },
     {
       "id": "p16",
-      "brand": "Jordan",
-      "name": "AIR JORDAN 1 MID",
-      "price": 120,
+      "brand": "Adidas",
+      "name": "ADIDAS JORDAN 1 MID",
+      "price": 99.5,
       "imageAltText": "AIR JORDAN 1 MID",
       "image": "/assets/img/our-products/16.png",
-      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+      "description": "This is body text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n\nIt has survived not only five centuries.\nBut also the leap into electronic typesetting, remaining esse`ntially unchanged. It was popularised in the 1960s With the release of Letraset sheets containing Lorem Ipsum passages.\nAnd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "inStock": false
     }
   ]
 }

@@ -3,21 +3,15 @@ import { useRouter } from "next/router";
 import { MainSecondary } from "@/components/shared/MainSecondary/MainSecondary";
 import { Product } from "@/components/shared/Product/Product";
 import { useAppDispatch, useAppSelector } from "@/hooks/redux-hooks";
-import {
-  addItemToCart,
-  removeItemFromCartByItsIdCompletely,
-} from "@/store/shopping-cart/shopping-cart.slice";
-import {
-  fetchAllProducts,
-  fetchSingleProductById,
-} from "@/store/products/products.actions";
-import {
-  selectCurrentProduct,
-  selectProductItems,
-} from "@/store/products/products.selectors";
+import { addItemToCart, removeItemFromCartByItsIdCompletely } from "@/store/shopping-cart/shopping-cart.slice";
+import { fetchAllProducts, fetchSingleProductById } from "@/store/products/products.actions";
+import { selectCurrentProduct, selectProductItems } from "@/store/products/products.selectors";
 import { selectCartItems } from "@/store/shopping-cart/shopping-cart.selectors";
-import { isProductInShoppingCart } from "@/helpers/shopping-cart";
+import { isProductInShoppingCart, isProductInWishlist } from "@/helpers/products";
 import { notification } from "@/helpers/utils";
+import { addItemToWishlist, removeItemFromWishlist } from "@/store/wishlist/wishlist.slice";
+import { selectWishlistItems } from "@/store/wishlist/wishlist.selectors";
+import { IWishlistItem } from "@/model/types";
 
 const LIMIT_FOR_PRODUCTS_MAPPED = 4;
 
@@ -26,6 +20,7 @@ export default function ProductPage() {
   const productSlug = router.query.productSlug;
   const dispatch = useAppDispatch();
   const cartItems = useAppSelector(selectCartItems);
+  const wishlistItems = useAppSelector(selectWishlistItems);
   const products = useAppSelector(selectProductItems);
   const currentProduct = useAppSelector(selectCurrentProduct);
 
@@ -33,6 +28,8 @@ export default function ProductPage() {
     cartItems,
     currentProduct,
   );
+
+  const productInWishlist = isProductInWishlist(wishlistItems, currentProduct as IWishlistItem);
 
   useEffect(() => {
     dispatch(fetchAllProducts());
@@ -59,6 +56,21 @@ export default function ProductPage() {
 
     dispatch(removeItemFromCartByItsIdCompletely({ id: currentProduct.id }));
     notification("Item removed from cart!", "info");
+  };
+
+  const toggleProductInWishlistHandler = () => {
+    if (currentProduct == null) {
+      return;
+    }
+
+    if (!productInWishlist) {
+      dispatch(addItemToWishlist({ item: currentProduct } as { item: IWishlistItem }));
+      notification("Item added to wishlist!", "success");
+      return;
+    }
+
+    dispatch(removeItemFromWishlist({ id: currentProduct.id }));
+    notification("Item removed from wishlist!", "info");
   };
 
   const renderedProducts = products?.slice(0, LIMIT_FOR_PRODUCTS_MAPPED).map((item) => {
@@ -172,8 +184,9 @@ export default function ProductPage() {
                     ? `Add to cart`
                     : "Remove from cart"}
                 </button>
-                <button className="btn btn--transparent-red product__add-to-wishlist-btn">
-                  Add to wishlist
+                <button className="btn btn--transparent-red product__add-to-wishlist-btn"
+                        onClick={toggleProductInWishlistHandler}>
+                  {!productInWishlist ? "Add to wishlist" : "Remove from wishlist"}
                 </button>
               </div>
 
