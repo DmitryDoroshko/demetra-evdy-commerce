@@ -75,7 +75,7 @@
   }
 
   &__sort-by-item {
-    width: 10rem;
+    width: 100%;
     cursor: pointer;
     color: $color-black;
     border: none;
@@ -91,7 +91,6 @@
   }
 
   &__storing-dropdown {
-    width: 19rem;
     position: relative;
   }
 
