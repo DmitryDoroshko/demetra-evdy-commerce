@@ -46,3 +46,20 @@ export const decodeToken = (token: string): IUser | null => {
     return null;
   }
 };
+
+export const formatUSD = (moneyValue: string | number): string => {
+  const moneyNumber = typeof moneyValue === "string" ? parseFloat(moneyValue) : moneyValue;
+
+  if (isNaN(moneyNumber)) {
+    return "$0";
+  }
+
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: moneyNumber % 1 === 0 ? 0 : 2,
+    maximumFractionDigits: 2,
+  });
+
+  return formatter.format(moneyNumber);
+};

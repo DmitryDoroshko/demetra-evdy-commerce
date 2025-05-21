@@ -5,7 +5,6 @@ import { ICartItem } from "../models/product";
 
 export const createOrder = async (req: Request, res: Response) => {
   try {
-    debugger;
     const { userId, items, userInfo } = req.body;
 
     if (!userId || !userInfo || !items || !items.length) {

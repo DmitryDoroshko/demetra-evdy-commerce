@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { formatUSD } from "@/helpers/utils";
 
 export function CartTotals({
   totalPrice,
@@ -22,7 +23,7 @@ export function CartTotals({
               Subtotals:
             </span>
             <span className="shopping-cart-full__content-right-price">
-              ${subtotalPrice}
+              {formatUSD(subtotalPrice)}
             </span>
           </div>
 
@@ -32,7 +33,7 @@ export function CartTotals({
 
           <div className="shopping-cart-full__content-right-flex">
             <span className="shopping-cart-full__content-right-text-heading shopping-cart-full__content-right-text-heading--2">
-              Flat Rate: ${shippingFlatRate}
+              Flat Rate: ${formatUSD(shippingFlatRate)}
             </span>
           </div>
 
@@ -47,7 +48,7 @@ export function CartTotals({
               Total:
             </h3>
             <span className="shopping-cart-full__content-right-price">
-              ${totalPrice}
+              {formatUSD(totalPrice)}
             </span>
           </div>
         </div>

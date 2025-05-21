@@ -9,6 +9,10 @@
     justify-content: space-between;
     margin-bottom: 4.1rem;
 
+    @media only screen and (max-width: $breakpoint-small) {
+      padding-top: 3rem;
+    }
+
     @media only screen and (max-width: $breakpoint-smallest) {
       flex-direction: column;
       gap: 2rem;
@@ -75,7 +79,7 @@
   }
 
   &__sort-by-item {
-    width: 10rem;
+    width: 100%;
     cursor: pointer;
     color: $color-black;
     border: none;
@@ -91,7 +95,6 @@
   }
 
   &__storing-dropdown {
-    width: 19rem;
     position: relative;
   }
 
