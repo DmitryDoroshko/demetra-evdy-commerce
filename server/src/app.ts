@@ -14,6 +14,8 @@ const allowedOrigins = [
   "http://localhost:3000",
   "https://demetra-evdy-commerce.vercel.app",
   "https://demetra-evdy-commerce-theta.vercel.app",
+  "demetra-evdy-commerce-git-dev-dmitrydoroshkos-projects.vercel.app",
+  "demetra-evdy-commerce-pfz8dksut-dmitrydoroshkos-projects.vercel.app",
 ];
 
 app.use(cors({
