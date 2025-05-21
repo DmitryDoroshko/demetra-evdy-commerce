@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useAppSelector } from "@/hooks/redux-hooks";
+import { selectSortedBy } from "@/store/products/products.selectors";
 
 interface IDropdownItem {
   id: string;
@@ -13,7 +15,9 @@ interface IDropdownProps {
 }
 
 export const ShopDropdown = ({ dropdownItems, Icon, onSelect }: IDropdownProps) => {
-  const [selectedItem, setSelectedItem] = useState<IDropdownItem>(dropdownItems[0]);
+  const sortedBy = useAppSelector(selectSortedBy);
+  const initialSortedByItem = dropdownItems.find(item => item.name === sortedBy);
+  const [selectedItem, setSelectedItem] = useState<IDropdownItem>(initialSortedByItem!);
 
   const handleSelectItem = (item: IDropdownItem) => {
     setSelectedItem(item);
@@ -49,5 +53,4 @@ export const ShopDropdown = ({ dropdownItems, Icon, onSelect }: IDropdownProps) 
       </div>
     </div>
   );
-
 };
