@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
+    "start:deployed": "node ./dist/app.js",
     "seed": "env-cmd -f ./config/dev.env ts-node ./src/scripts/seed.ts",
     "dev": "env-cmd -f ./config/dev.env nodemon ./src/app.ts",
     "start": "env-cmd -f ./config/prod.env node ./dist/app.js",
