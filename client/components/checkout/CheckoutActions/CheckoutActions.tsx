@@ -37,7 +37,7 @@ export function CheckoutActions({ onSuccess }: { onSuccess: () => void; }) {
   const { register, handleSubmit, formState: { errors } } = useForm<CheckoutFormInputs>();
 
   const renderedCartItemsSummaries = cartItems.map(item => (
-    <div className="totals__content-right-flex">
+    <div key={item.id} className="totals__content-right-flex">
       <span className="totals__content-right-heading">{item.name}</span>
       <span className="totals__content-right-price">${item.price}</span>
     </div>
@@ -52,7 +52,7 @@ export function CheckoutActions({ onSuccess }: { onSuccess: () => void; }) {
     try {
       await checkoutService.createOrder({ items: cartItems, userId: user.id, userInfo: userInfo });
       onSuccess();
-    } catch (error) {
+    } catch {
       notification("Error occurred...", "error");
     }
   };

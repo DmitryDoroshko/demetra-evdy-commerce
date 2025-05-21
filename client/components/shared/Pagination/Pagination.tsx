@@ -42,7 +42,7 @@ export function Pagination({
     onPageChange(currentPage - 1);
   };
 
-  let lastPage = paginationRange[paginationRange.length - 1];
+  const lastPage = paginationRange[paginationRange.length - 1];
 
   return (
     <div className={classnames("pagination__pagination", className)}>
@@ -78,6 +78,7 @@ export function Pagination({
         if (pageNumber === DOTS) {
           return (
             <button
+              key={pageNumber}
               className={classnames(
                 "pagination__pagination-btn",
                 "pagination__pagination-btn--dots"
