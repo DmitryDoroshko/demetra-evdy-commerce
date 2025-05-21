@@ -35,7 +35,7 @@ export function WishlistItem(
   const toggleWishlistItemToOrFromCartHandler = () => {
     // TODO: Fix this warning
     if (!isProductInCart) {
-      // @ts-ignore
+      //@ts-expect-error Need to fix this later
       dispatch(addItemToCart({ item: productFromWishlist, count: 1 }));
       notification("Added item to cart", "success");
       return;

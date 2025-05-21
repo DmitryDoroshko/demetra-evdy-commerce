@@ -48,7 +48,7 @@ export default function ProductPage() {
 
     if (!productInShoppingCart) {
       // TODO: Fix this warning
-      // @ts-ignore
+      //@ts-expect-error Need to fix this later
       dispatch(addItemToCart({ item: currentProduct, count: 1 }));
       notification("Item added to cart!", "success");
       return;
@@ -215,11 +215,11 @@ export default function ProductPage() {
                   <p className="product__text">
                     This is body text. Lorem Ipsum is simply dummy text of the
                     printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s.
+                    industry`&apos;s standard dummy text ever since the 1500s.
                   </p>
                   <p className="product__text">
                     Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
+                    typesetting industry. Lorem Ipsum has been the industry`&apos;s
                     standard dummy text ever since the 1500s, when an unknown
                     printer took a galley of type and scrambled it to make a
                     type specimen book.
@@ -243,7 +243,7 @@ export default function ProductPage() {
 
                   <p className="product__text">
                     Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
+                    typesetting industry. Lorem Ipsum has been the industry`&apos;s
                     standard dummy text ever since the 1500s.{" "}
                   </p>
                 </div>
