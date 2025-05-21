@@ -1,3 +1,4 @@
+import { formatUSD } from "@/helpers/utils";
 import { useAppDispatch } from "@/hooks/redux-hooks";
 import {
   decreaseItemByOneUnitByItsId,
@@ -114,7 +115,7 @@ export function ShoeItem(
 
       <div className="shopping-cart-full__shoe-item-right">
         <span className="shopping-cart-full__shoe-item-price">
-          ${amountOfMoneyForItems}
+          {formatUSD(amountOfMoneyForItems)}
         </span>
       </div>
     </div>
