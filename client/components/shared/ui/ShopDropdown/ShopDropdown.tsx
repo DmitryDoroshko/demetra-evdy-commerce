@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 interface IDropdownItem {
   id: string;
-  name: string;
+  name: "price" | "name";
   label: string;
 }
 

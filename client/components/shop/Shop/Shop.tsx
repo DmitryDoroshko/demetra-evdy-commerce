@@ -1,17 +1,18 @@
 import React, { useState, useMemo } from "react";
 import { Product } from "@/components/shared/Product/Product";
 import { SHOP_ITEMS_COUNT_SIZE } from "@/constants/shop";
-import { useAppSelector } from "@/hooks/redux-hooks";
+import { useAppDispatch, useAppSelector } from "@/hooks/redux-hooks";
 import { selectProductItems } from "@/store/products/products.selectors";
 import { Pagination } from "@/components/shared/Pagination/Pagination";
 import { ShopDropdown } from "@/components/shared/ui/ShopDropdown/ShopDropdown";
 import { SortByIconSvg } from "@/components/shared/ui/SortByIconSvg/SortByIconSvg";
 import { StoringDropdown } from "@/components/shared/ui/StoringDropdown/StoringDropdown";
 import { DROPDOWN_SORT_BY_ITEMS, DROPDOWN_STORING_ITEMS } from "@/data/dropdownsData";
+import { setSortedBy } from "@/store/products/products.slice";
 
 interface IDropdownSortingByItem {
   id: string;
-  name: string;
+  name: "name" | "price";
   label: string;
 }
 
@@ -23,6 +24,7 @@ interface IDropdownStoringItem {
 export function Shop() {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const productItems = useAppSelector(selectProductItems);
+  const dispatch = useAppDispatch();
 
   // Memoize the current page's shop items loaded array in order not to recompute it multiple times
   const currentTableData = useMemo(() => {
@@ -32,7 +34,7 @@ export function Shop() {
   }, [currentPage, productItems]);
 
   const handleSelectSortingBy = (item: IDropdownSortingByItem) => {
-    console.log("handleSelectSorting", item);
+    dispatch(setSortedBy(item.name));
   };
 
   const handleSelectStoring = (item: IDropdownStoringItem) => {

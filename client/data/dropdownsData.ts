@@ -1,4 +1,4 @@
-export const DROPDOWN_SORT_BY_ITEMS = [
+export const DROPDOWN_SORT_BY_ITEMS: { id: string; name: "name" | "price"; label: string; }[] = [
   {
     id: "id1",
     name: "name",
