@@ -13,6 +13,7 @@ connectDB();
 const allowedOrigins = [
   "http://localhost:3000",
   "https://demetra-evdy-commerce.vercel.app",
+  "https://demetra-evdy-commerce-theta.vercel.app",
 ];
 
 app.use(cors({
